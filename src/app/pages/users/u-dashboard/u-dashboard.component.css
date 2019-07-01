@@ -1,0 +1,12 @@
+header{
+    background: url(../../../../assets/register.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 500px;
+}
+
+@media screen and (max-width: 670px){
+    header{
+        min-height: 250px;
+    }
+}
