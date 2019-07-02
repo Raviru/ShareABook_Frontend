@@ -86,7 +86,7 @@ input[type="text"], input[type="email"], input[type="number"], input[type="passw
 	width: 93%;
 	font-family: 'PT Sans Caption', sans-serif;
     background: rgba(255, 255, 255, 0);
-    color: #999;
+    color: rgb(255, 255, 255);
 }
 .w3l-div,.w3l-div1 {
     font-size: 15px;
@@ -108,7 +108,7 @@ input[type="text"], input[type="email"], input[type="number"], input[type="passw
     font-weight: 700;
     text-align: center;
 	padding: 10px 10px;
-    width: 30%;
+    width: 40%;
     outline: none;
     border: none;
     border-radius: 4px;
@@ -194,6 +194,9 @@ input[type="text"], input[type="email"], input[type="number"], input[type="passw
 	select.form-control, select.form-contro2, select.form-contro3{
 		width: 92%
 	}
+	.w3ls-submit input[type="submit"]:hover{
+		width: 100%;
+	}
 }
 @media(max-width:640px){
 	input[type="text"], input[type="email"], input[type="email"], input[type="number"] {
@@ -202,8 +205,8 @@ input[type="text"], input[type="email"], input[type="number"], input[type="passw
 	select.form-control ,select.form-contro2,select.form-contro3{
 		width: 92%;
 	}
-	footer{
-		font-size: 14px;
+	.w3ls-submit input[type="submit"]:hover{
+		width: 100%;
 	}
 }
 @media(max-width:600px){
@@ -218,6 +221,9 @@ input[type="text"], input[type="email"], input[type="number"], input[type="passw
 	}
 	input[type="text"], input[type="email"], input[type="email"], input[type="number"] {
 		width: 90%;
+	}
+	.w3ls-submit input[type="submit"]{
+		width: 100%;
 	}
 }
 @media(max-width:480px){
@@ -263,4 +269,6 @@ input[type="text"], input[type="email"], input[type="number"], input[type="passw
 		width: 230px;
 	}
 }
+
+
 /*--/responsive--*/

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-u-register',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./u-register.component.css']
 })
 export class URegisterComponent implements OnInit {
+  types = ['Student', 'Educator'];
 
-  constructor() { }
+  constructor(private fb: FormBuilder) {}
 
-  ngOnInit() {
-  }
+  registrationForm = this.fb.group({
+    userName: [''],
+    email: [''],
+    phone: [''],
+    city: [''],
+    postalCode: [''],
+    password: [''],
+    confirmPassword: [''],
+    type: [''],
+    check1: [''],
+    check2: ['']
+  });
 
+  ngOnInit() {}
 }

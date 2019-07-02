@@ -171,6 +171,9 @@ p{
     font-size: 1.5em;
     border:2px solid #0a7369;
 }
+.checkbox {
+	font-size: 13px;
+}
 .checkbox a {
     color: #999;
 }

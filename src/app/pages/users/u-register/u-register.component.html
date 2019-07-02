@@ -23,51 +23,58 @@
         <div class="register-in">
           <h2><span><img src="../../../../assets/pencil.png"></span> register here</h2>
           <div class="register-form">
-            <form [formGroup]="" action="#" method="post">
+            <form [formGroup]="registrationForm" action="#" method="post">
               <div class="fields-grid">
                 <div class="styled-input agile-styled-input-top">
-                  <input type="text" name="User name" required> 
+                  <input type="text" formControlName="userName" required> 
                   <label>User Name</label>
                   <span></span>
                 </div>
                 <div class="styled-input">
-                  <input type="email" name="Email" required>
+                  <input type="email" formControlName="email" required>
                   <label>Email</label>
                   <span></span>
                 </div>
                 <div class="styled-input">
-                  <input type="number" name="Phone" required>
+                  <input type="number" formControlName="phone" required>
                   <label>Contact Number</label>
                   <span></span>
                 </div>
                 <div class="styled-input">
-                  <input type="number" name="Postal" required>
+                  <input type="text" formControlName="city" required>
+                  <label>City</label>
+                  <span></span>
+                </div>
+                <div class="styled-input">
+                  <input type="number" formControlName="postalCode" required>
                   <label>Postal Code</label>
                   <span></span>
                 </div>
                 <div class="styled-input">
-                  <input type="password" name="password" required>
+                  <input type="password" formControlName="password" required>
                   <label>Password</label>
                   <span></span>
                 </div>
                 <div class="styled-input">
-                  <input type="password" name="confirmpassword" required>
+                  <input type="password" formControlName="confirmPassword" required>
                   <label>Confirm Password</label>
                   <span></span>
                 </div>
                 <div class="styled-input agile-styled-input-top">
-                  <select id="type" required>
+                  <select id="type" formControlName="type" required>
                     <option value="">I'm a</option>
-                    <option value="">Student</option>
-                    <option value="">Educator</option>
+                    <option [value]="type" *ngFor="let type of types" >{{type}}</option>
                   </select>
                   <span></span>
                 </div>
                 <div class="clear"> </div>
-                 <label class="checkbox"><input type="checkbox" name="checkbox" checked><i></i>I agree to the <a href="#">Terms and Conditions</a></label>
+                 <label class="checkbox"><input type="checkbox" formControlName="check1"><i></i>Subscribe to <a href="#"> SMS notifications</a></label>
+                <div class="clear"> </div>
+                 <label class="checkbox"><input type="checkbox" formControlName="check2"><i></i>I agree to the <a href="#">Terms and Conditions</a></label>
               </div>
-              <input type="submit" value="Register" [routerLink]="['/users/u-dashboard']">
+              <input type="submit" value="Register" [disabled]="!registrationForm.valid" [routerLink]="['/users/u-dashboard']">
             </form>
+            {{registrationForm.value | json}}
           </div>
         </div>
         <div class="clear"> </div>

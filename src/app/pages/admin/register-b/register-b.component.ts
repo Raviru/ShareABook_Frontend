@@ -1,3 +1,4 @@
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterBComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
+
+      bookstoreRegistrationForm = this.fb.group({
+        bookstoreName: [''],
+        regNumber: [''],
+        email: [''],
+        contactNumber: [''],
+        managerName: [''],
+        managerNIC: [''],
+        address: [''],
+        city: [''],
+        state: [''],
+        postalCode: [''],
+        userName: [''],
+        password: [''],
+      });
 
   ngOnInit() {
   }
