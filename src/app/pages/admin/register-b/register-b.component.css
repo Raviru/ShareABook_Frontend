@@ -42,6 +42,12 @@ h1 {
     margin: 0 auto;
 	box-shadow: 3px 3px #ff4f81;
 }
+
+.w3l-last-grid1, w3l-last-grid2 small{
+	color: #ff4f81;
+	font-size: 12px;
+}
+
 .w3l-grid1,.w3l-grid2{
     float: left;
     width: 49%;
@@ -88,6 +94,7 @@ input[type="text"], input[type="email"], input[type="number"], input[type="passw
     background: rgba(255, 255, 255, 0);
     color: rgb(255, 255, 255);
 }
+
 .w3l-div,.w3l-div1 {
     font-size: 15px;
     font-weight: 500;
@@ -103,6 +110,11 @@ input[type="text"], input[type="email"], input[type="number"], input[type="passw
     background: rgba(255, 255, 255, 0);
     color: #999;
 }
+
+.w3l-div,.w3l-div1 .is-invalid{
+	color: red
+}
+
 .w3ls-submit input[type="submit"] {
     font-size: 17px;
     font-weight: 700;

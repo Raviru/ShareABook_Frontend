@@ -1,4 +1,5 @@
 <!-- body starts -->
+
 <body>
   <!-- section -->
   <section class="register">
@@ -6,82 +7,198 @@
       <div class="register-left">
         <div class="register">
           <div class="logo">
-            <a href="#"><span><img src="../../../../assets/graduation-cap.png"></span></a>
+            <a href="#"><span><img src="../../../../assets/graduation-cap.png" /></span></a>
           </div>
           <h1>Register to Share a Book</h1>
           <p>You are 30 seconds away from connecting with Share a book</p>
           <p>Connect using:</p>
           <div class="content3">
             <ul>
-              <li><a class="" href="#"><img src="../../../../assets/google1.png"></a></li>
-              <li><a class="read" href="#"><img src="../../../../assets/facebook2.png"></a></li>
+              <li>
+                <a class="" href="#"><img src="../../../../assets/google1.png" /></a>
+              </li>
+              <li>
+                <a class="read" href="#"><img src="../../../../assets/facebook2.png" /></a>
+              </li>
             </ul>
           </div>
         </div>
       </div>
       <div class="register-right">
         <div class="register-in">
-          <h2><span><img src="../../../../assets/pencil.png"></span> register here</h2>
+          <h2>
+            <span><img src="../../../../assets/pencil.png" /></span> register
+            here
+          </h2>
           <div class="register-form">
             <form [formGroup]="registrationForm" action="#" method="post">
               <div class="fields-grid">
-                <div class="styled-input agile-styled-input-top">
-                  <input type="text" formControlName="userName" required> 
-                  <label>User Name</label>
-                  <span></span>
+                <div class="styled-inputx">
+                  <div class="styled-input agile-styled-input-top">
+                    <input  
+                            type="text" 
+                            formControlName="userName" 
+                            [class.is-invalid]="userName.invalid && 
+                                                userName.touched"
+                            [class.is-valid]="userName.valid">
+                    <label>User Name *</label>
+                    <span></span>
+                  </div>
+                  <small 
+                          *ngIf="(userName.errors && submitted==true) ||
+                                 ((userName).touched && userName.invalid)">
+                    <small *ngIf="userName.errors?.required">User Name is required</small>
+                  </small>
                 </div>
-                <div class="styled-input">
-                  <input type="email" formControlName="email" required>
-                  <label>Email</label>
-                  <span></span>
+                <div class="styled-inputx">
+                  <div class="styled-input">
+                    <input 
+                            type="email" 
+                            formControlName="email"
+                            [class.is-invalid]="email.invalid && 
+                                                email.touched"
+                            [class.is-valid]="email.valid">
+                    <label>Email *</label>
+                    <span></span>
+                  </div>
+                  <small 
+                          *ngIf="(email.errors && submitted==true) ||
+                                 (email.touched && email.invalid)">
+                    <small *ngIf="email.errors?.required">Email is required</small>
+                    <small *ngIf="email.errors?.pattern">Enter a valid email address</small>
+                  </small>
                 </div>
-                <div class="styled-input">
-                  <input type="number" formControlName="phone" required>
-                  <label>Contact Number</label>
-                  <span></span>
+                <div class="styled-inputx">
+                  <div class="styled-input">
+                    <input 
+                            type="tel" 
+                            formControlName="phone" 
+                            [class.is-invalid]="phone.invalid && 
+                                                phone.touched"
+                            [class.is-valid]="phone.valid && 
+                                              phone.touched">
+                    <label>Contact Number</label>
+                    <span></span>
+                  </div>
+                  <small 
+                          *ngIf="(phone.touched && phone.invalid)">
+                    <small *ngIf="phone.errors?.pattern">Enter a valid Phone Number</small>
+                  </small>
                 </div>
-                <div class="styled-input">
-                  <input type="text" formControlName="city" required>
-                  <label>City</label>
-                  <span></span>
+                <div class="styled-inputx">
+                  <div class="styled-input">
+                    <input 
+                            type="text" 
+                            formControlName="city"
+                            [class.is-invalid]="city.invalid && 
+                                                city.touched"
+                            [class.is-valid]="city.valid">
+                    <label>City *</label>
+                    <span></span>
+                  </div> 
+                  <small 
+                          *ngIf="(city.errors && submitted==true) ||
+                          (city.touched && city.invalid)">
+                    <small *ngIf="city.errors?.required">City is required</small>
+                  </small>
                 </div>
-                <div class="styled-input">
-                  <input type="number" formControlName="postalCode" required>
-                  <label>Postal Code</label>
-                  <span></span>
+                <div class="styled-inputx">
+                  <div class="styled-input">
+                    <input 
+                            type="number" 
+                            formControlName="postalCode" 
+                            [class.is-invalid]="postalCode.invalid && 
+                                                postalCode.touched"
+                            [class.is-valid]="postalCode.valid &&
+                                              postalCode.touched">
+                    <label>Postal Code</label>
+                    <span></span>
+                  </div> 
+                  <small
+                          *ngIf="(postalCode.touched && postalCode.invalid)">
+                    <small *ngIf="postalCode.errors?.pattern">Enter a valid postal code</small>
+                  </small>
                 </div>
-                <div class="styled-input">
-                  <input type="password" formControlName="password" required>
-                  <label>Password</label>
-                  <span></span>
+                <div class="styled-inputx">
+                  <div class="styled-input">
+                    <input 
+                            type="password" 
+                            formControlName="password"
+                            [class.is-invalid]="password.invalid && 
+                                                password.touched"
+                            [class.is-valid]="password.valid">
+                    <label>Password *</label>
+                    <span></span>
+                  </div>
+                  <small 
+                          *ngIf="(password.errors && submitted==true) ||
+                                 (password.touched && password.invalid)">
+                    <small *ngIf="password.errors?.required">Password is required</small>
+                  </small>
                 </div>
-                <div class="styled-input">
-                  <input type="password" formControlName="confirmPassword" required>
-                  <label>Confirm Password</label>
-                  <span></span>
+                <div class="styled-inputx">
+                  <div class="styled-input">
+                    <input 
+                            type="password" 
+                            formControlName="confirmPassword"
+                            [class.is-invalid]="confirmPassword.invalid && 
+                                                confirmPassword.touched"
+                            [class.is-valid]="confirmPassword.valid">
+                    <label>Confirm Password *</label>
+                    <span></span>
+                  </div>
+                  <small 
+                          *ngIf="(confirmPassword.errors && submitted==true) ||
+                          (confirmPassword.touched && confirmPassword.invalid)">
+                    <small *ngIf="registrationForm.controls.confirmPassword.invalid">Passwords do not match</small>
+                  </small>
                 </div>
-                <div class="styled-input agile-styled-input-top">
-                  <select id="type" formControlName="type" required>
-                    <option value="">I'm a</option>
-                    <option [value]="type" *ngFor="let type of types" >{{type}}</option>
-                  </select>
-                  <span></span>
+                <div class="styled-inputx">
+                  <div class="styled-input agile-styled-input-top">
+                    <select 
+                            id="type" 
+                            formControlName="type"
+                            [class.is-invalid]="type.invalid && 
+                                                type.touched"
+                            [class.is-valid]="type.valid">
+                      <option value="">I'm a *</option>
+                      <option [value]="type" *ngFor="let type of types">
+                        {{type}}
+                      </option>
+                    </select>
+                    <span></span>
+                  </div>
+                  <small 
+                           *ngIf="(type.errors && submitted==true) ||
+                           (type.touched && type.invalid)">
+                     <small *ngIf="type.errors?.required">User type should be selected</small>
+                  </small>
                 </div>
-                <div class="clear"> </div>
-                 <label class="checkbox"><input type="checkbox" formControlName="check1"><i></i>Subscribe to <a href="#"> SMS notifications</a></label>
-                <div class="clear"> </div>
-                 <label class="checkbox"><input type="checkbox" formControlName="check2"><i></i>I agree to the <a href="#">Terms and Conditions</a></label>
+                <div class="clear"></div>
+                <label class="checkbox"><input type="checkbox" formControlName="check1" /><i></i>Subscribe to <a
+                    href="#"> SMS notifications</a></label>
+                <div class="clear"></div>
+                <label class="checkbox">
+                  <input 
+                          type="checkbox" 
+                          formControlName="check2"
+                          [class.is-invalid]="check2.invalid"> 
+                   <i></i>I agree to the <a href="#">Terms and Conditions</a></label>
               </div>
-              <input type="submit" value="Register" [disabled]="!registrationForm.valid" [routerLink]="['/users/u-dashboard']">
+              <input 
+                      type="submit" 
+                      value="Register" 
+                      (click)="onSubmit()"
+                      >
             </form>
-            {{registrationForm.value | json}}
+            {{ registrationForm.value | json }}
           </div>
         </div>
-        <div class="clear"> </div>
+        <div class="clear"></div>
       </div>
-    <div class="clear"> </div>
+      <div class="clear"></div>
     </div>
   </section>
   <!-- //section -->
-  </body>	
-  <!-- //body ends -->
+</body>
+<!-- //body ends -->
