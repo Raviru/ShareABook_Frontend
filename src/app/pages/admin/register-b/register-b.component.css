@@ -111,9 +111,9 @@ input[type="text"], input[type="email"], input[type="number"], input[type="passw
     color: #999;
 }
 
-.w3l-div,.w3l-div1 .is-invalid{
+/* .w3l-div,.w3l-div1 .is-valid {
 	color: red
-}
+} */
 
 .w3ls-submit input[type="submit"] {
     font-size: 17px;

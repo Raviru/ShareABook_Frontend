@@ -17,15 +17,25 @@
           </div>
           <small 
                   *ngIf="(bookstoreName.errors && submitted==true) ||
-                  ((bookstoreName).touched && bookstoreName.invalid)">
+                         ((bookstoreName).touched && bookstoreName.invalid)">
             <small *ngIf="bookstoreName.errors?.required">Book Store Name is required</small>
           </small>
         </div> 
         <div class="w3l-grid2">
         <label class="text">Business Reg. Number</label>
         <div class="w3l-div">
-          <input type="text" formControlName="regNumber" required>
+          <input 
+                  type="text"   
+                  formControlName="regNumber"
+                  [class.is-invalid]="regNumber.invalid && 
+                                      regNumber.touched"
+                  [class.is-valid]="regNumber.valid">
         </div>
+        <small 
+                *ngIf="(regNumber.errors && submitted==true) ||
+                       ((regNumber).touched && regNumber.invalid)">
+          <small *ngIf="regNumber.errors?.required">Book Store Registration Number is required</small>
+        </small>
         </div>
         <div class="clear"></div>
       </div>	
@@ -33,14 +43,37 @@
         <div class="w3l-grid1">
           <label class="text">Email</label>
           <div class="w3l-div">
-            <input type="email" formControlName="email" required>
+            <input 
+                    type="email" 
+                    formControlName="email"
+                    [class.is-invalid]="email.invalid && 
+                                        email.touched"
+                    [class.is-valid]="email.valid">
           </div>
+          <small 
+                  *ngIf="(email.errors && submitted==true) ||
+                         (email.touched && email.invalid)">
+            <small *ngIf="email.errors?.required">Email is required</small>
+            <small *ngIf="email.errors?.pattern">Enter a valid email address</small>
+          </small>
         </div>
         <div class="w3l-grid2">
           <label class="text">Contact number</label>
           <div class="w3l-div">
-            <input type="number" formControlName="contactNumber" required>
+            <input 
+                    type="text" 
+                    formControlName="contactNumber" 
+                    [class.is-invalid]="contactNumber.invalid && 
+                                        contactNumber.touched"
+                    [class.is-valid]="contactNumber.valid && 
+                                      contactNumber.touched">
           </div>
+          <small 
+                  *ngIf="(contactNumber.errors && submitted==true) ||
+                         (contactNumber.touched && contactNumber.invalid)">
+            <small *ngIf="contactNumber.errors?.required">Contact Number is required</small>
+            <small *ngIf="contactNumber.errors?.pattern">Enter a valid Phone Number</small>
+          </small>
         </div>
         <div class="clear"></div>
       </div>
@@ -48,14 +81,34 @@
         <div class="w3l-grid1">
           <label class="text">Manager Name</label>
           <div class="w3l-div">
-            <input type="text" formControlName="managerName" required>
+            <input 
+                    type="text" 
+                    formControlName="managerName" 
+                    [class.is-invalid]="managerName.invalid && 
+                                        managerName.touched"
+                    [class.is-valid]="managerName.valid">
           </div>
+          <small 
+                  *ngIf="(managerName.errors && submitted==true) ||
+                         ((managerName).touched && managerName.invalid)">
+            <small *ngIf="managerName.errors?.required">Manager Name is required</small>
+          </small>
         </div>
         <div class="w3l-grid2">
           <label class="text">Manager NIC</label>
           <div class="w3l-div">
-            <input type="text" formControlName="managerNIC" required>
+            <input 
+                    type="text" 
+                    formControlName="managerNIC" 
+                    [class.is-invalid]="managerNIC.invalid && 
+                                        managerNIC.touched"
+                    [class.is-valid]="managerNIC.valid">
           </div>
+          <small 
+                 *ngIf="(managerNIC.errors && submitted==true) ||
+                        ((managerNIC).touched && managerNIC.invalid)">
+            <small *ngIf="managerNIC.errors?.required">Manager NIC is required</small>
+          </small>
         </div>
         <div class="clear"></div>
       </div>
@@ -63,45 +116,100 @@
         <div class="w3l-grid1">	
           <label class="text">Address</label>
           <div class="w3l-div">
-            <input type="text" formControlName="address" required>
+            <input 
+                    type="text" 
+                    formControlName="address" 
+                    [class.is-invalid]="address.invalid && 
+                                        address.touched"
+                    [class.is-valid]="address.valid">
           </div>
+          <small 
+                 *ngIf="(address.errors && submitted==true) ||
+                        ((address).touched && address.invalid)">
+            <small *ngIf="address.errors?.required">Address is required</small>
+          </small>
         </div>
         <div class="w3l-grid2">	
           <label class="text">City</label>
           <div class="w3l-div">
-            <input type="text" formControlName="city" required>
+            <input 
+                    type="text" 
+                    formControlName="city" 
+                    [class.is-invalid]="city.invalid && 
+                                        city.touched"
+                    [class.is-valid]="city.valid">
           </div>
+          <small 
+                  *ngIf="(city.errors && submitted==true) ||
+                        ((city).touched && city.invalid)">
+            <small *ngIf="city.errors?.required">City is required</small>
+          </small>
         </div>
         <div class="clear"></div>
       </div>
       
-      <div class="w3l-right-grid1">
+      <div class="w3l-last-grid1">
         <div class="w3l-grid1">
           <label class="text">State</label>
           <div class="w3l-div">
             <input type="text" formControlName="state" required>
           </div>
+          <small 
+                  *ngIf="(state.errors && submitted==true) ||
+                         ((state).touched && state.invalid)">
+            <small *ngIf="state.errors?.required">State is required</small>
+          </small>
         </div>
         <div class="w3l-grid2">
           <label class="text">Postal Code</label>
           <div class="w3l-div">
-            <input type="number" formControlName="postalCode" required>
+            <input 
+                    type="number" 
+                    formControlName="postalCode"
+                    [class.is-invalid]="postalCode.invalid && 
+                                        postalCode.touched"
+                    [class.is-valid]="postalCode.valid &&
+                                      postalCode.touched">
           </div>
+          <small
+                  *ngIf="(postalCode.touched && postalCode.invalid)">
+            <small *ngIf="postalCode.errors?.pattern">Enter a valid postal code</small>
+          </small>
         </div>
         <div class="clear"></div>
       </div>
-      <div class="w3l-right-grid1">
+      <div class="w3l-last-grid1">
         <div class="w3l-grid1">
           <label class="text">User Name</label>
           <div class="w3l-div">
-            <input type="text" formControlName="userName" required>
+            <input 
+                    type="text" 
+                    formControlName="userName"
+                    [class.is-invalid]="userName.invalid && 
+                                        userName.touched"
+                    [class.is-valid]="userName.valid">
           </div>
+          <small 
+                  *ngIf="(userName.errors && submitted==true) ||
+                         ((userName).touched && userName.invalid)">
+            <small *ngIf="userName.errors?.required">User Name is required</small>
+          </small>
         </div>
         <div class="w3l-grid2">
           <label class="text">Password</label>
           <div class="w3l-div">
-            <input type="password" formControlName="password" required>
+            <input 
+                    type="password" 
+                    formControlName="password"
+                    [class.is-invalid]="password.invalid && 
+                                        password.touched"
+                    [class.is-valid]="password.valid">
           </div>
+          <small 
+                  *ngIf="(password.errors && submitted==true) ||
+                         ((password).touched && password.invalid)">
+            <small *ngIf="password.errors?.required">Password is required</small>
+          </small>
         </div>
         <div class="clear"></div>
       </div>
@@ -111,7 +219,7 @@
         <input 
                 type="submit" 
                 value="Register Book Store" 
-                (click)=onSubmit()">
+                (click)="onSubmit()">
       </div>
   </form>
   {{bookstoreRegistrationForm.value | json}}

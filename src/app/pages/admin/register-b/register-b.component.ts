@@ -62,7 +62,7 @@ export class RegisterBComponent implements OnInit {
     bookstoreName: ['', Validators.required],
     regNumber: ['', Validators.required],
     email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
-    contactNumber: ['', Validators.pattern(this.contactNumPattern)],
+    contactNumber: ['', [Validators.required, Validators.pattern(this.contactNumPattern)]],
     managerName: ['', Validators.required],
     managerNIC: ['', Validators.required],
     address: ['', Validators.required],
