@@ -1,3 +1,35 @@
 <header>
     <app-u-navbar></app-u-navbar>
 </header>
+<body>
+    <div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">ISBN</th>
+								<th class="column2">Name</th>
+								<th class="column3">Author</th>
+								<th class="column4">Language</th>
+								<th class="column5">Subject</th>
+								<th class="column6">Price</th>
+							</tr>
+						</thead>
+						<tbody>
+								<tr *ngFor="let bookDetail of bookDetails">
+									<td class="column1">{{bookDetail.name}}</td>
+									<td class="column2">{{bookDetail.ISBN}}</td>
+									<td class="column3">{{bookDetail.author}}</td>
+									<td class="column4">{{bookDetail.language}}</td>
+									<td class="column5">{{bookDetail.subject}}</td>
+									<td class="column6">{{bookDetail.price}}</td>
+								</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -12,6 +13,7 @@ import { UOrdersComponent } from './u-orders/u-orders.component';
 import { URequestsComponent } from './u-requests/u-requests.component';
 import { UCandsComponent } from './u-cands/u-cands.component';
 
+import { BookDetailsService } from './../../services/book-details.service';
 
 @NgModule({
   declarations: [
@@ -28,8 +30,11 @@ import { UCandsComponent } from './u-cands/u-cands.component';
     CommonModule,
     UsersRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    BookDetailsService
+  ],
   bootstrap: [
     UDashboardComponent,
     UProfileComponent,

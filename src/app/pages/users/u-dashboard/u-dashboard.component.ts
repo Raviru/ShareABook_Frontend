@@ -1,3 +1,4 @@
+import { BookDetailsService } from './../../../services/book-details.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UDashboardComponent implements OnInit {
 
-  constructor() { }
+  public bookDetails = [];
+
+  constructor(private _bookDetailsService: BookDetailsService) { }
 
   ngOnInit() {
+    this.bookDetails = this._bookDetailsService.getBookDetails();
   }
 
 }

@@ -1,3 +1,4 @@
+import { AuthenticationService } from './../../../services/authentication.service';
 import { passwordValidator } from 'src/app/validator';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
@@ -13,7 +14,8 @@ export class URegisterComponent implements OnInit {
   submitted = false;
 
   constructor(private fb: FormBuilder,
-              private route: Router) {}
+              private route: Router,
+              private _authService: AuthenticationService) {}
 
   emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
   contactNumPattern = '^((\\+91-?)|0)?[0-9]{10}$';
@@ -68,11 +70,17 @@ export class URegisterComponent implements OnInit {
 
     // stop here if form is invalid
     if (this.registrationForm.invalid) {
-        return;
+        return false;
+    } else {
+      this.route.navigate(['/user/u-dashboard']);
     }
-
-    alert('Registration Successful!! :-)\n\n' + JSON.stringify(this.registrationForm.value));
-    this.route.navigate(['/users/u-dashboard']);
+    console.log(this.registrationForm.value);
+    this._authService.register(this.registrationForm.value)
+    .subscribe(
+      response => console.log('Success', response),
+      error => console.log('Error', error)
+    );
+// if
 }
 
   ngOnInit() {}
