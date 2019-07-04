@@ -4,7 +4,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 const httpOptions = {
   header: new HttpHeaders({ 'Content-Type': 'application/json'})
 };
-
 @Injectable({
   providedIn: 'root'
 })
@@ -14,5 +13,9 @@ export class AuthenticationService {
 
   register(user) {
     return this.http.post<any>('http://localhost:8080/shareabook/api/v1/authentication/register', user);
+  }
+
+  bookstore(user) {
+    return this.http.post<any>('http://localhost:8080/shareabook/api/v1/admin/bookshop/register', user);
   }
 }

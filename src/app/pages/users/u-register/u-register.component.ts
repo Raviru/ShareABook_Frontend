@@ -62,7 +62,7 @@ export class URegisterComponent implements OnInit {
     confirmPassword: ['', [Validators.required, passwordValidator]],
     type: ['', Validators.required],
     check1: [''],
-    check2: ['true', Validators.requiredTrue]
+    check2: ['', Validators.requiredTrue]
   });
 
   onSubmit() {
@@ -71,9 +71,10 @@ export class URegisterComponent implements OnInit {
     // stop here if form is invalid
     if (this.registrationForm.invalid) {
         return false;
-    } else {
-      this.route.navigate(['/user/u-dashboard']);
     }
+
+    this.route.navigate(['/users/u-dashboard']);
+
     console.log(this.registrationForm.value);
     this._authService.register(this.registrationForm.value)
     .subscribe(

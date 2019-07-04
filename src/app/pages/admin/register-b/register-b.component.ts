@@ -1,3 +1,4 @@
+import { AuthenticationService } from './../../../services/authentication.service';
 import {
   FormGroup,
   FormControl,
@@ -15,7 +16,9 @@ import { Router } from '@angular/router';
 export class RegisterBComponent implements OnInit {
   submitted = false;
 
-  constructor(private fb: FormBuilder, private route: Router) {}
+  constructor(private fb: FormBuilder,
+              private route: Router,
+              private authService: AuthenticationService) {}
 
   emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$';
   contactNumPattern = '^((\\+91-?)|0)?[0-9]{10}$';
@@ -78,11 +81,18 @@ export class RegisterBComponent implements OnInit {
 
     // stop here if form is invalid
     if (this.bookstoreRegistrationForm.invalid) {
-      return;
-  }
+        return false;
+    }
 
-    alert('Registration Successful!! :-)\n\n' + JSON.stringify(this.bookstoreRegistrationForm.value));
     this.route.navigate(['/admin/a-dashboard']);
+
+    console.log(this.bookstoreRegistrationForm.value);
+    this.authService.bookstore(this.bookstoreRegistrationForm.value)
+    .subscribe(
+      response => console.log('Success', response),
+      error => console.log('Error', error)
+    );
+// if
 }
   
 ngOnInit() {}
