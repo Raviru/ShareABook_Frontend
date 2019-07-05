@@ -20,13 +20,13 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr *ngFor="let bookDetail of bookDetails">
-							<td class="column1">{{bookDetail.name}}</td>
-							<td class="column2">{{bookDetail.ISBN}}</td>
-							<td class="column3">{{bookDetail.author}}</td>
-							<td class="column4">{{bookDetail.language}}</td>
-							<td class="column5">{{bookDetail.subject}}</td>
-							<td class="column6">{{bookDetail.price}}</td>
+						<tr *ngFor="let item of items">
+							<td class="column1">{{item.name}}</td>
+							<td class="column2">{{item.isbn}}</td>
+							<td class="column3">{{item.author}}</td>
+							<td class="column4">{{item.noOfCopies}}</td>
+							<td class="column5">{{item.examType}}</td>
+							<td class="column6">{{item.itemType}}</td>
 						</tr>
 					</tbody>
 				</table>
