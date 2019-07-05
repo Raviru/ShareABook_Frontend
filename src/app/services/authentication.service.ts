@@ -18,4 +18,8 @@ export class AuthenticationService {
   bookstore(user) {
     return this.http.post<any>('http://localhost:8080/shareabook/api/v1/admin/bookshop/register', user);
   }
+
+  item(book) {
+    return this.http.post<any>('http://localhost:8080/shareabook/api/v1/admin/book/add', book);
+  }
 }

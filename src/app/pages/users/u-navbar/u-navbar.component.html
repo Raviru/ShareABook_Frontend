@@ -20,11 +20,6 @@
             <li><a [routerLink]="['/users/u-cands']">Complaints & Suggestions</a></li>
             <li><a (click)="logout()">Logout</a></li>
           </ul>
-          <div class="searchbar">
-            <ul class="search">
-              <li><a href="#search">Search</a></li>
-            </ul>
-          </div>
           <ul class="sidenav grey lighten-2" id="mobile-menu">
             <li><a href="">Dashboard</a></li>
             <li><a href="">My Profile</a></li>
@@ -34,12 +29,5 @@
             <li><a href="">Complaints & Suggestions</a></li>
             <li><a href="">Logout</a></li>
           </ul>
-        </div>
-        <div id="search">
-            <button type="button" class="close">×</button>
-            <form [formGroup]="">
-                <input type="search" value="" placeholder="Search Your Book Here..." />
-                <button type="submit" class="btn btn-primary">Search</button>
-            </form>
         </div>
       </nav>

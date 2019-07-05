@@ -24,6 +24,9 @@ export class URegisterComponent implements OnInit {
   get userName() {
     return this.registrationForm.get('userName');
   }
+  get name() {
+    return this.registrationForm.get('name');
+  }
   get email() {
     return this.registrationForm.get('email');
   }
@@ -54,6 +57,7 @@ export class URegisterComponent implements OnInit {
 
   registrationForm = this.fb.group({
     userName: ['', Validators.required],
+    name: ['', Validators.required],
     email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
     phone: ['', Validators.pattern(this.contactNumPattern)],
     city: ['', Validators.required],

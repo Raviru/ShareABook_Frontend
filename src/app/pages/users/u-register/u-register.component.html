@@ -51,6 +51,23 @@
                   </small>
                 </div>
                 <div class="styled-inputx">
+                  <div class="styled-input agile-styled-input-top">
+                    <input  
+                            type="text" 
+                            formControlName="Name" 
+                            [class.is-invalid]="name.invalid && 
+                                                name.touched"
+                            [class.is-valid]="name.valid">
+                    <label>Name *</label>
+                    <span></span>
+                  </div>
+                  <small 
+                          *ngIf="(name.errors && submitted==true) ||
+                                 ((name).touched && name.invalid)">
+                    <small *ngIf="name.errors?.required">Name is required</small>
+                  </small>
+                </div>
+                <div class="styled-inputx">
                   <div class="styled-input">
                     <input 
                             type="email" 

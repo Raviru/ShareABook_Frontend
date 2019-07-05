@@ -10,7 +10,7 @@ import { URequestsComponent } from './u-requests/u-requests.component';
 import { UCandsComponent } from './u-cands/u-cands.component';
 import { UBookaddComponent } from './u-bookadd/u-bookadd.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: 'u-profile', component: UProfileComponent },
   { path: 'u-dashboard', component: UDashboardComponent },
   { path: 'u-register', component: URegisterComponent },

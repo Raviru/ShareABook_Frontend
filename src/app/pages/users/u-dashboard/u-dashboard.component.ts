@@ -1,5 +1,5 @@
-import { BookDetailsService } from './../../../services/book-details.service';
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from 'src/app/services/search.service';
 
 @Component({
   selector: 'app-u-dashboard',
@@ -10,10 +10,10 @@ export class UDashboardComponent implements OnInit {
 
   public bookDetails = [];
 
-  constructor(private bookDetailsService: BookDetailsService) { }
+  constructor(private serachService: SearchService) { }
 
   ngOnInit() {
-    this.bookDetails = this.bookDetailsService.getBookDetails();
+    // this.bookDetails = this.serachService.filter;
   }
 
 }
