@@ -19,6 +19,6 @@ export class SearchService {
   } */
 
   public findAll(): Observable<Item[]>{
-    return this.http.get<Item[]>('http://localhost:8080/shareabook/api/v1/admin/book/search/all');
+    return this.http.get<Item[]>('http://localhost:8080/shareabook/api/v1/book/search/all');
   }
 }

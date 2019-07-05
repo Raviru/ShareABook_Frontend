@@ -1,3 +1,10 @@
+/*--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+--*/
+/* reset */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
 article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
 ol,ul{list-style:none;margin:0px;padding:0px;}
@@ -23,7 +30,7 @@ img{max-width:100%;}
 body{
 	margin:0;
 	padding:0;
-	background: url(../../../../assets/register.jpg);
+	background: url(../../../../assets/add5.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -32,7 +39,7 @@ body{
     -moz-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
-	 font-family: 'PT Sans Caption', sans-serif;
+	 font-family: 'Roboto', sans-serif;
  }
 h1,h2,h3,h4,h5,h6{
 	margin:0;	
@@ -59,11 +66,27 @@ input[type="submit"],a,.agileinfo_social_icons li{
 .center-container{
 	padding:0em 0;
 }
-
+.w3layouts_copy_right{
+	padding:1em 0;
+	text-align:center;
+	border-top:none;
+}
+.w3layouts_copy_right p {
+    color: #ffffff;
+    line-height: 2em;
+    font-size: 16px;
+}
+.w3layouts_copy_right p a{
+	color:#cd31c1;
+	text-decoration:none;
+}
+.w3layouts_copy_right p a:hover{
+	color:#fff;
+}
+/*-- //footer --*/
 .main{
 	padding:5em 0;
 }
-
 .main h1{
 	text-align: center;
     color: #fff;
@@ -76,17 +99,16 @@ input[type="submit"],a,.agileinfo_social_icons li{
 	width: 35%;
     padding: 2em;
     margin:0 auto;
-    background:rgba(87, 86, 87, 0.36);
+    background:rgba(120, 109, 118, 0.36);
 }
 .w3layouts_main_grid span {
     padding: .5em 0;
     display: block;
 }
 .w3layouts_main_grid span label{
-    color: white;
-    font-size: 15px;
-    font-weight: 500;
-    text-transform: capitalize;
+    color: #FFFFFF;
+    font-size: 14px;
+    text-transform: uppercase;
     font-style: normal;
     float: left;
     width: 28%;
@@ -94,10 +116,9 @@ input[type="submit"],a,.agileinfo_social_icons li{
 	position:relative;
 }
 .content-w3ls{
-    color: white;
-    font-size: 15px;
-    font-weight: 500;
-    text-transform: capitalize;
+    color: #FFFFFF;
+    font-size: 14px;
+    text-transform: uppercase;
     font-style: normal;
     margin: .8em 0 0;
 	position:relative;
@@ -109,13 +130,13 @@ input[type="submit"],a,.agileinfo_social_icons li{
 	color:#fff;
 	font-style:normal;
 }
-.w3layouts_main_grid input[type="text"], #category, #category1, #risk, #priority, .w3layouts_main_grid textarea, .w3layouts_main_grid input[type="number"] {
+.w3layouts_main_grid input[type="text"], #category, #category1, #risk, #priority, .agileits_w3layouts_main_gridr input[type="time"], .w3layouts_main_grid input[type="email"], .w3layouts_main_grid textarea {
     outline: none;
     width: 68%;
     background:rgba(120, 109, 118, 0.36);
     color: #fff;
     padding: 10px;
-    font-size: 15px;
+    font-size: 14px;
     border: 1px solid rgba(152, 149, 149, 0.42);
 }
 .w3layouts_main_grid select {
@@ -123,7 +144,7 @@ input[type="submit"],a,.agileinfo_social_icons li{
     background: rgba(152, 149, 149, 0.42);
     color: #fff;
     padding: 10px;
-    font-size: 15px;
+    font-size: 14px;
     border: 1px solid rgba(152, 149, 149, 0.42);
 }
 ::-webkit-input-placeholder{
@@ -136,8 +157,11 @@ input[type="submit"],a,.agileinfo_social_icons li{
 	float:left;
 	width:41%;
 }
-.agileits_w3layouts_main_gridl input[type="text"],.agileits_w3layouts_main_gridr input[type="number"]{
+.agileits_w3layouts_main_gridl input[type="text"],.agileits_w3layouts_main_gridr input[type="time"]{
 	width:90% !important;
+}
+.agileits_w3layouts_main_gridr input[type="time"] {
+    padding: 7.5px !important;
 }
 .agileits_w3layouts_main_gridr{
 	float:right;
@@ -150,24 +174,31 @@ input[type="submit"],a,.agileinfo_social_icons li{
 	float:left;
 	margin: 0.5em 0 0;
 }
+.w3_main_grid_left a{
+	font-size: 1em;
+    color: #FFFFFF;
+    text-transform: capitalize;
+}
+.w3_main_grid_left a:hover{
+	color:#FF0F75;
+}
 .w3_main_grid_right input[type="submit"]{
 	outline:none;
 	padding:10px 0;
 	width:22%;
 	text-transform:uppercase;
-    font-size:16px;
-    font-weight: 600;
+	font-size:14px;
 	color:#fff;
-	background:#2dde98;
+	background:#cd31c1;
 	border:none;
 	cursor:pointer;
 }
 .w3_main_grid_right input[type="submit"]:hover{
-	background:#ff4f81;
+	background:#df49d3;
 }
 /*-- radio button --*/
 span {
-    color: #2dde98;
+    color: #cd31c1;
 }
 .grid-w3layouts1 ul li,.grid-w3layouts2 ul li{
 	color: #fff;
@@ -225,13 +256,13 @@ ul li .check::before {
     -webkit-transition: background 0.25s linear;
 }
 input[type=radio]:checked ~ .check {
-	border: 2px solid #2dde98;
+	border: 2px solid #cd31c1;
 }
 input[type=radio]:checked ~ .check::before{
-	background: #2dde98;
+	background: #cd31c1;
 }
 input[type=radio]:checked ~ label{
-	color: #2dde98;
+	color: #cd31c1;
 }
 /*-- /radio button --*/
 .form-w3ls {
@@ -295,7 +326,7 @@ option{
 }
 }
 @media (max-width: 736px){
-.w3layouts_main_grid input[type="text"], #category, #category1, #risk, #priority, .agileits_w3layouts_main_gridr input[type="number"] {
+.w3layouts_main_grid input[type="text"], #category, #category1, #risk, #priority, .agileits_w3layouts_main_gridr input[type="time"], .w3layouts_main_grid input[type="email"], .w3layouts_main_grid textarea {
 	width: 67.6%;
 }
 .main h1 {
@@ -306,7 +337,7 @@ option{
 }
 }
 @media (max-width: 667px){
-.w3layouts_main_grid input[type="text"], #category, #category1, #risk, #priority, .agileits_w3layouts_main_gridr input[type="number"] {
+.w3layouts_main_grid input[type="text"], #category, #category1, #risk, #priority, .agileits_w3layouts_main_gridr input[type="time"], .w3layouts_main_grid input[type="email"], .w3layouts_main_grid textarea {
 	width: 67%;
 }
 .w3layouts_main_grid span label i {
@@ -321,6 +352,9 @@ option{
 }
 .agileits_w3layouts_main_gridr {
 	width: 30%;
+}
+.agileits_w3layouts_main_gridr input[type="time"] {
+	padding: 9px 7.5px !important;
 }
 }
 @media (max-width: 640px){
@@ -341,7 +375,7 @@ option{
 	margin: 0 0 1em;
 	display: block;
 }
-.w3layouts_main_grid input[type="text"], #category, #category1, #risk, #priority, .agileits_w3layouts_main_gridr input[type="number"] {
+.w3layouts_main_grid input[type="text"], #category, #category1, #risk, #priority, .agileits_w3layouts_main_gridr input[type="time"], .w3layouts_main_grid input[type="email"], .w3layouts_main_grid textarea {
 	width: 94.5%;
 }
 .w3layouts_main_grid span label i {
@@ -365,7 +399,7 @@ option{
 	padding: 2em 0;
 /*-- w3layouts --*/
 }
-.w3layouts_main_grid input[type="text"], #category, #category1, #risk, #priority,.w3layouts_main_grid input[type="number"] {
+.w3layouts_main_grid input[type="text"], #category, #category1, #risk, #priority, .agileits_w3layouts_main_gridr input[type="time"], .w3layouts_main_grid input[type="email"], .w3layouts_main_grid textarea {
 	width: 94.3%;
 }
 .w3layouts_main_grid span label i {
@@ -382,10 +416,10 @@ option{
 	width: 100%;
 	float: none;
 }
-.agileits_w3layouts_main_gridl input[type="text"] {
+.agileits_w3layouts_main_gridl input[type="text"], .agileits_w3layouts_main_gridr input[type="time"] {
 	width: 92.9% !important;
 }
-.w3layouts_main_grid input[type="text"], #category, #category1, #risk, #priority, .w3layouts_main_grid input[type="number"] {
+.w3layouts_main_grid input[type="text"], #category, #category1, #risk, #priority, .agileits_w3layouts_main_gridr input[type="time"], .w3layouts_main_grid input[type="email"], .w3layouts_main_grid textarea {
 	width: 93.3%;
 }
 .agileits_w3layouts_main_gridr input[type="time"] {
@@ -408,11 +442,14 @@ option{
 .w3layouts_main_grid {
 	width: 75%;
 }
-.w3layouts_main_grid input[type="text"], #category, #category1, #risk, #priority, .w3layouts_main_grid input[type="number"] {
+.w3layouts_main_grid input[type="text"], #category, #category1, #risk, #priority, .agileits_w3layouts_main_gridr input[type="time"], .w3layouts_main_grid input[type="email"], .w3layouts_main_grid textarea {
 	width: 92.3%;
 }
-.agileits_w3layouts_main_gridl input[type="text"]{
+.agileits_w3layouts_main_gridl input[type="text"], .agileits_w3layouts_main_gridr input[type="time"] {
 	width: 92% !important;
+}
+.agileits_w3layouts_main_gridr input[type="time"] {
+	width: 94% !important;
 }
 .w3_main_grid_left {
 	float: none;
@@ -431,13 +468,19 @@ option{
 }
 }
 @media (max-width:384px){
-.w3layouts_main_grid input[type="text"], #category, #category1, #risk, #priority, .w3layouts_main_grid input[type="type"] {
+.w3layouts_main_grid input[type="text"], #category, #category1, #risk, #priority, .agileits_w3layouts_main_gridr input[type="time"], .w3layouts_main_grid input[type="email"], .w3layouts_main_grid textarea {
 	width: 92%;
+}
+.agileits_w3layouts_main_gridr input[type="time"] {
+	width: 93.8% !important;
 }
 }
 @media (max-width: 375px){
-.w3layouts_main_grid input[type="text"], #category, #category1, #risk, #priority, .w3layouts_main_grid input[type="number"] {
+.w3layouts_main_grid input[type="text"], #category, #category1, #risk, #priority, .agileits_w3layouts_main_gridr input[type="time"], .w3layouts_main_grid input[type="email"], .w3layouts_main_grid textarea {
 	width:91.5% !important;
+}
+.agileits_w3layouts_main_gridr input[type="time"] {
+	width: 93.5% !important;
 }
 #category, #category1, #risk, #priority {
 	width: 100% !important;
@@ -451,17 +494,23 @@ option{
 .w3layouts_main_grid {
 	padding: 1em;
 }
-.w3layouts_main_grid span label,.w3layouts_main_grid input[type="text"], #category, #category1, #risk, #priority,.w3layouts_main_grid input[type="text"] {
+.w3layouts_main_grid span label,.w3layouts_main_grid input[type="text"], #category, #category1, #risk, #priority, .agileits_w3layouts_main_gridr input[type="time"], .w3layouts_main_grid input[type="email"], .w3layouts_main_grid textarea{
 	font-size: 13px;
 }
 .w3layouts_main_grid span label i {
 	right: 50%;
 }
-.w3layouts_main_grid input[type="text"], #category, #category1, #risk, #priority, .w3layouts_main_grid input[type="number"]{
+.w3layouts_main_grid input[type="text"], #category, #category1, #risk, #priority, .agileits_w3layouts_main_gridr input[type="time"], .w3layouts_main_grid input[type="email"], .w3layouts_main_grid textarea {
 	width: 90% !important;
+}
+.agileits_w3layouts_main_gridr input[type="time"] {
+	width: 93.5% !important;
 }
 #category, #category1, #risk, #priority {
 	width: 100% !important;
+}
+.agileits_w3layouts_main_gridr input[type="time"] {
+	width: 92.5% !important;
 }
 .w3_main_grid {
 	margin: 1em 0 0;
