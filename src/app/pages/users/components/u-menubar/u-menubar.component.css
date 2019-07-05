@@ -1,0 +1,21 @@
+/* body */
+.nav-wrapper {
+  background-color: rgb(17, 17, 128);
+}
+
+.container ul li :hover {
+    color: #2dde98;
+    text-decoration: none;
+  }
+  
+  .container .brand-logo {
+    font-family: "Concert One";
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 670px){
+    .container .search{
+        min-height: 250px;
+        padding-left: 50%;
+    }
+}

@@ -1,5 +1,41 @@
-<app-u-navbar></app-u-navbar>
-<p>
-  u-catalogue works!
-</p>
+<header>
+  <app-u-menubar></app-u-menubar>
+</header>
 
+<body>
+  <input type="submit" value="Add new item" (click)="onSubmit()">
+  <div class="container">
+    <div class="row"></div>
+      <div class="panel panel-primary filterable">
+        <div class="panel-heading">
+          <div class="pull-right">
+            <button class="btn btn-outline-secondary btn-filter"><i class="fas fa-sort"></i>Filter</button>
+          </div>
+        </div>
+        <table class="table">
+          <thead>
+            <tr class="filters">
+              <th><input type="text" class="form-control" placeholder="ISBN" disabled></th>
+              <th><input type="text" class="form-control" placeholder="Book Name" disabled></th>
+              <th><input type="text" class="form-control" placeholder="Author" disabled></th>
+              <th><input type="text" class="form-control" placeholder="Publisher" disabled></th>
+              <th><input type="text" class="form-control" placeholder="Language" disabled></th>
+              <th><input type="text" class="form-control" placeholder="Subject" disabled></th>
+              <th><input type="text" class="form-control" placeholder="Price" disabled></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let bookDetail of bookDetails'>
+              <td>{{bookDetail.ISBN}}</td>
+              <td>{{bookDetail.name}}</td>
+              <td>{{bookDetail.author}}</td>
+              <td>{{bookDetail.publisher}}</td>
+              <td>{{bookDetail.language}}</td>
+              <td>{{bookDetail.subject}}</td>
+              <td>{{bookDetail.price}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</body>

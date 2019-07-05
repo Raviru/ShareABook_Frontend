@@ -36,5 +36,5 @@ export class UNavbarComponent implements OnInit {
   logout() {
     this.router.navigate(['/home']);
   }
-
 }
+

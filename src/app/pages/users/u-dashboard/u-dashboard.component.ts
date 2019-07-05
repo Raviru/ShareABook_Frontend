@@ -10,10 +10,10 @@ export class UDashboardComponent implements OnInit {
 
   public bookDetails = [];
 
-  constructor(private _bookDetailsService: BookDetailsService) { }
+  constructor(private bookDetailsService: BookDetailsService) { }
 
   ngOnInit() {
-    this.bookDetails = this._bookDetailsService.getBookDetails();
+    this.bookDetails = this.bookDetailsService.getBookDetails();
   }
 
 }

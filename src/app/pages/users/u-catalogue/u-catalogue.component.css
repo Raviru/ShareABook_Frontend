@@ -1,0 +1,85 @@
+/* header{
+    background-color: rgb(31, 30, 30);
+    background-size: cover;
+    background-position: center;
+    min-height: 50px;
+} */
+
+input[type="submit"] {
+    outline: none;
+    color: #FFFFFF;
+    width: 80%;
+    padding: 0.4em 1em;
+    font-size: 1.7em;
+    border-radius: 5px;
+	  letter-spacing: 1px;
+    margin: 1em 10% 0 10%;
+    -webkit-appearance: none;
+    background: #2dde98;
+    border: 2px solid #2dde98;
+    cursor: pointer;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    transition: 0.5s all;
+    letter-spacing: 0.1px;
+	font-family: 'Harmattan';
+}
+
+input[type="submit"]:hover {
+    background: #ff4f81;
+	border: 2px solid #ff4f81;
+} 
+
+.container {
+  width: 100%;
+  padding-top: 80px;
+}
+
+.filterable {
+  margin-top: 15px;
+}
+
+.filterable .panel-heading .pull-right {
+  margin-top: -20px;
+  float: right;
+}
+
+.filterable .panel-heading .pull-right button {
+  margin: 10px;
+  border: 3px solid gray;
+  padding: 10px 10px 50px 10px;
+  background-color: transparent;
+  text-transform: capitalize;
+  font-size: 17px;
+  color: #ff4f81;
+}
+
+.filterable .panel-heading .pull-right button:hover {
+  color: #2dde98;
+}
+
+.filterable .panel-heading .pull-right button > i {
+  padding-right:  10px;
+}
+
+.filterable .filters input[disabled] {
+  background-color: transparent;
+  border: none;
+  cursor: auto;
+  box-shadow: none;
+  padding: 0;
+  height: auto;
+}
+.filterable .filters input[disabled]::-webkit-input-placeholder {
+  color: #333;
+}
+.filterable .filters input[disabled]::-moz-placeholder {
+  color: #333;
+}
+.filterable .filters input[disabled]:-ms-input-placeholder {
+  color: #333;
+}
+
+

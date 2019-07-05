@@ -12,6 +12,8 @@ import { UCatalogueComponent } from './u-catalogue/u-catalogue.component';
 import { UOrdersComponent } from './u-orders/u-orders.component';
 import { URequestsComponent } from './u-requests/u-requests.component';
 import { UCandsComponent } from './u-cands/u-cands.component';
+import { UBookaddComponent } from './u-bookadd/u-bookadd.component';
+import { UMenubarComponent } from './components/u-menubar/u-menubar.component';
 
 import { BookDetailsService } from './../../services/book-details.service';
 
@@ -24,7 +26,9 @@ import { BookDetailsService } from './../../services/book-details.service';
     UCatalogueComponent,
     UOrdersComponent,
     URequestsComponent,
-    UCandsComponent
+    UCandsComponent,
+    UBookaddComponent,
+    UMenubarComponent
   ],
   imports: [
     CommonModule,
@@ -43,7 +47,8 @@ import { BookDetailsService } from './../../services/book-details.service';
     UCatalogueComponent,
     UOrdersComponent,
     URequestsComponent,
-    UCandsComponent
+    UCandsComponent,
+    UMenubarComponent
   ],
 
 })

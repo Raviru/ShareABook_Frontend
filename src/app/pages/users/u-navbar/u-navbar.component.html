@@ -1,53 +1,45 @@
 <head>
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
-<nav class="nav-wrapper transparent">
-  <div class="container">
-    <a href="" class="brand-logo">Share a Book</a>
-    <a href="" class="sidenav-trigger" data-target="mobile-menu">
-      <i class="material-icons">menu</i>
-    </a>
-    <ul class="right hide-on-med-and-down">
-      <li><a [routerLink]="['/users/u-dashboard']">Dashboard</a></li>
-      <li><a [routerLink]="['/users/u-profile']">Profile</a></li>
-      <li><a [routerLink]="['/users/u-catalogue']">Catalogue</a></li>
-      <li><a [routerLink]="['/users/u-orders']">Orders</a></li>
-      <li><a [routerLink]="['/users/u-requests']">Requests</a></li>
-      <li><a [routerLink]="['/users/u-cands']">Complaints & Suggestions</a></li>
-      <li><a (click)="logout()">Logout</a></li>
-    </ul>
-    <div class="searchbar">
-      <ul class="search">
-        <li><a href="#search">Search</a></li>
-      </ul>
-    </div>
-    <ul class="sidenav grey lighten-2" id="mobile-menu">
-      <li><a href="">Dashboard</a></li>
-      <li><a href="">My Profile</a></li>
-      <li><a href="">My Catalogue</a></li>
-      <li><a href="">My Orders</a></li>
-      <li><a href="">Requests for materials</a></li>
-      <li><a href="">Complaints & Suggestions</a></li>
-      <li><a href="">Logout</a></li>
-    </ul>
-  </div>
-  <div id="search">
-    <button type="button" class="close">×</button>
-    <form [formGroup]="">
-        <input type="search" value="" placeholder="Search Your Book Here..." />
-        <button type="submit" class="btn btn-primary">Search</button>
-    </form>
-</div>
-</nav>
-<!-- Compiled and minified JavaScript -->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-
-<script>
-
-</script>
+    <nav class="nav-wrapper transparent">
+        <div class="container">
+          <a href="" class="brand-logo">Share a Book</a>
+          <a href="" class="sidenav-trigger" data-target="mobile-menu">
+            <i class="material-icons">menu</i>
+          </a>
+          <ul class="right hide-on-med-and-down">
+            <li><a [routerLink]="['/users/u-dashboard']">Dashboard</a></li>
+            <li><a [routerLink]="['/users/u-profile']">Profile</a></li>
+            <li><a [routerLink]="['/users/u-catalogue']">Catalogue</a></li>
+            <li><a [routerLink]="['/users/u-orders']">Orders</a></li>
+            <li><a [routerLink]="['/users/u-requests']">Requests</a></li>
+            <li><a [routerLink]="['/users/u-cands']">Complaints & Suggestions</a></li>
+            <li><a (click)="logout()">Logout</a></li>
+          </ul>
+          <div class="searchbar">
+            <ul class="search">
+              <li><a href="#search">Search</a></li>
+            </ul>
+          </div>
+          <ul class="sidenav grey lighten-2" id="mobile-menu">
+            <li><a href="">Dashboard</a></li>
+            <li><a href="">My Profile</a></li>
+            <li><a href="">My Catalogue</a></li>
+            <li><a href="">My Orders</a></li>
+            <li><a href="">Requests for materials</a></li>
+            <li><a href="">Complaints & Suggestions</a></li>
+            <li><a href="">Logout</a></li>
+          </ul>
+        </div>
+        <div id="search">
+            <button type="button" class="close">×</button>
+            <form [formGroup]="">
+                <input type="search" value="" placeholder="Search Your Book Here..." />
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </div>
+      </nav>

@@ -8,8 +8,9 @@ import { UCatalogueComponent } from './u-catalogue/u-catalogue.component';
 import { UOrdersComponent } from './u-orders/u-orders.component';
 import { URequestsComponent } from './u-requests/u-requests.component';
 import { UCandsComponent } from './u-cands/u-cands.component';
+import { UBookaddComponent } from './u-bookadd/u-bookadd.component';
 
-export const routes: Routes = [
+const routes: Routes = [
   { path: 'u-profile', component: UProfileComponent },
   { path: 'u-dashboard', component: UDashboardComponent },
   { path: 'u-register', component: URegisterComponent },
@@ -17,6 +18,7 @@ export const routes: Routes = [
   { path: 'u-orders', component: UOrdersComponent },
   { path: 'u-requests', component: URequestsComponent },
   { path: 'u-cands', component: UCandsComponent },
+  { path: 'u-bookadd', component: UBookaddComponent },
 
   {path: '**', redirectTo: 'u-dashboard', pathMatch: 'full'},
 ];
