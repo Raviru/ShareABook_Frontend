@@ -5,6 +5,26 @@ header{
     min-height: 500px;
 }
 
+header button {
+    width: 49%;
+    background-color: transparent;
+    font-size: 25px;
+    color: white;
+    border-color: #ff4f81; 
+    border-radius: 5px;
+    border-width: 2px;
+    text-align: left;
+    padding: 30px;
+    margin-top: 330px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+header button:hover {
+    background-color: #2dde98;
+    border-color: transparent;
+}
+
 button {
     width: 100%
 }

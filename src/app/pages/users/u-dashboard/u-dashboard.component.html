@@ -1,38 +1,42 @@
 <header>
 	<app-u-navbar></app-u-navbar>
+	<div class="pagination justify-content-center">
+		<button>USERS</button>
+		<button>BOOKSTORES</button>
+	</div>
 </header>
 <body>
-	<div>
-		<input type="text" placeholder="Search Your Item Here..." [(ngModel)]="searchTerm">
-		<button btn btn-outline-info (click)=onClick()>Search</button>
-
-	<div class="container-table100">
-		<div class="wrap-table100">
-			<div class="table100">
-				<table>
-					<thead>
-						<tr class="table100-head">
-							<th class="column1">ISBN</th>
-							<th class="column2">Name</th>
-							<th class="column3">Author</th>
-							<th class="column4">Language</th>
-							<th class="column5">Subject</th>
-							<th class="column6">Price</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr *ngFor="let item of items">
-							<td class="column1">{{item.name}}</td>
-							<td class="column2">{{item.isbn}}</td>
-							<td class="column3">{{item.author}}</td>
-							<td class="column4">{{item.noOfCopies}}</td>
-							<td class="column5">{{item.examType}}</td>
-							<td class="column6">{{item.itemType}}</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
-	</div>
+	<p>
+		<input
+			#query
+			(keyup)="filter(query.value)"
+			type="text" class="form-control" placeholder="Search..">
+	</p>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Exam Type</th>
+				<th>Subject</th>
+				<th>Language</th>
+				<th>Item Type</th>
+				<th>Price</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let book of bookDetails$">
+				<td> {{book.bookName}} </td>
+				<td> {{book.examType}} </td>
+				<td> {{book.subject}} </td>
+				<td> {{book.mediumType}} </td>
+				<td> {{book.itemType}} </td>
+				<td> {{book.price}} </td>
+				<td> 
+					<a [routerLink]="['/bookItem', book.$key]">View</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </body>

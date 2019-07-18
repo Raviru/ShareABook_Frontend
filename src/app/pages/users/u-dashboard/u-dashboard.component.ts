@@ -1,6 +1,5 @@
+import { BookDetailsService } from './../../../services/book-details.service';
 import { Component, OnInit } from '@angular/core';
-import { SearchService } from 'src/app/services/search.service';
-import { Item } from 'src/app/pages/users/classes/item';
 
 @Component({
   selector: 'app-u-dashboard',
@@ -8,24 +7,15 @@ import { Item } from 'src/app/pages/users/classes/item';
   styleUrls: ['./u-dashboard.component.css']
 })
 export class UDashboardComponent implements OnInit {
-  /* public bookDetails = []; */
-  public searchTerm = '';
-  public items: Item[];
+  bookDetails$;
 
-  constructor(private searchService: SearchService) { }
+  constructor(private bookdetailService: BookDetailsService) {
+    this.bookDetails$ = this.bookdetailService.getBookDetails();
+   }
 
-  onClick() {
-    console.log(this.searchTerm);
-    this.searchService.search({
-      queryParams: {searchTerm: this.searchTerm}
-    }).subscribe(
-      response => console.log('Success', response),
-      error => console.error('Error', error)
-    );
-    this.searchService.findAll().subscribe(data => {
-      this.items = data;
-    });
-  }
+   filter(query: string) {
+      console.log(query);
+   }
 
   ngOnInit() {
     // this.bookDetails = this.serachService.filter;

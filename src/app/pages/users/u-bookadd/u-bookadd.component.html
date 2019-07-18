@@ -65,6 +65,18 @@
 					  <label>Author</label>
 					  <span></span>
 					</div> 
+				  </div>
+				  <div class="styled-inputx">
+					<div class="styled-input">
+					  <input 
+							  type="text" 
+							  formControlName="publisher"
+							  [class.is-invalid]="publisher.invalid && 
+												  publisher.touched"
+							  [class.is-valid]="publisher.valid && publisher.touched && publisher.dirty">
+					  <label>Publisher</label>
+					  <span></span>
+					</div> 
 					<!-- <small 
 							*ngIf="(city.errors && submitted==true) ||
 							(city.touched && city.invalid)">
@@ -166,6 +178,24 @@
 							 *ngIf="(itemType.errors && submitted==true) ||
 							 (itemType.touched && itemType.invalid)">
 					   <small *ngIf="itemType.errors?.required">Item type should be selected</small>
+					</small>
+				  </div>
+				  <div class="styled-inputx">
+					<div class="styled-input">
+					  <input 
+							  type="number" 
+							  formControlName="price" 
+							  [class.is-invalid]="price.invalid && 
+												  price.touched"
+							  [class.is-valid]=" price.valid &&
+												 price.touched">
+					  <label>Price (LKR) *</label>
+					  <span></span>
+					</div> 
+					<small 
+							*ngIf="((price).touched && price.invalid)">
+					  <small *ngIf="price.errors?.min">Price should be a positive value</small>
+					  <small *ngIf="price.errors?.required">Price should entered</small>
 					</small>
 				  </div>
 				  <div class="clear"></div>

@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 export class UBookaddComponent implements OnInit {
   examTypes = ['O/L', 'A/L'];
   mediumTypes = ['Sinhala', 'English', 'Tamil', 'Other'];
-  itemTypes = ['Reference Book', 'Paper', 'Short Note', 'Personal Note'];
+  itemTypes = ['Reference Book', 'Past Papers', 'Short Note', 'Personal Note'];
   submitted = false;
 
   constructor(private fb: FormBuilder,
@@ -31,6 +31,9 @@ export class UBookaddComponent implements OnInit {
   }
   get author() {
     return this.bookAddForm.get('author');
+  }
+  get publisher() {
+    return this.bookAddForm.get('publisher');
   }
   get copies() {
     return this.bookAddForm.get('copies');
@@ -47,16 +50,21 @@ export class UBookaddComponent implements OnInit {
   get itemType() {
     return this.bookAddForm.get('itemType');
   }
+  get price() {
+    return this.bookAddForm.get('price');
+  }
 
   bookAddForm = this.fb.group({
     bookName: ['', Validators.required],
     ISBN: [''],
     author: [''],
+    publisher: [''],
     copies: ['', Validators.min(0)],
     examType: ['', Validators.required],
     subject: ['', Validators.required],
     mediumType: ['', Validators.required],
-    itemType: ['', Validators.required]
+    itemType: ['', Validators.required],
+    price: ['', [Validators.required, Validators.min(0)]]
   });
 
   onSubmit() {

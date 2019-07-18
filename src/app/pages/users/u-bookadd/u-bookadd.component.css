@@ -199,8 +199,8 @@ small {
 select{
     font-size: .9em;
     letter-spacing: 1px;
-    color: #fff;
-	font-weight:100;
+	color: rgb(228, 226, 226);
+	font-weight: 400;
     padding: 0.6em .5em;
     border: 0;
     width: 90%;
@@ -241,10 +241,10 @@ select{
 	margin-left:0 !important;
 }
 .styled-input label {
-	color: #fff;
-    padding: 0.5em .9em;
+	color: rgb(228, 226, 226);
+    padding: 0.6em .5em;
     letter-spacing: 1px;
-	font-weight:100;
+	font-weight: 400;
     position: absolute;
     top: 0;
     left: 0;

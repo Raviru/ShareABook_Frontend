@@ -24,11 +24,11 @@ input[type="submit"] {
     -ms-transition: 0.5s all;
     transition: 0.5s all;
     letter-spacing: 0.1px;
-	font-family: 'Harmattan';
+	  font-family: 'Harmattan';
 }
 
 input[type="submit"]:hover {
-    background: #ff4f81;
+  background: #ff4f81;
 	border: 2px solid #ff4f81;
 } 
 
@@ -37,7 +37,46 @@ input[type="submit"]:hover {
   padding-top: 80px;
 }
 
-.filterable {
+.card {
+  height: 98%;
+}
+
+.card .card-body h5 {
+  font-weight: 700;
+  font-size: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  font-family: 'Harmattan';
+}
+
+.card .card-body p {
+  line-height: 15px;
+  text-align: left;
+}
+
+input[type="button"]{
+  width: 47%;
+  padding: 15px;
+  margin-left: 5px;
+  font-weight: 700;
+  color: rgb(53, 53, 53);
+  font-size: 18px;
+  text-transform: uppercase;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  letter-spacing: 0.1px;
+  font-family: 'Harmattan';
+}
+
+input[type="button"]:hover {
+  border: 2PX solid rgb(228, 226, 226);
+}
+
+input[type="button"]:active {
+  border: 2PX solid rgb(228, 226, 226);
+}
+
+/* .filterable {
   margin-top: 15px;
 }
 
@@ -80,6 +119,6 @@ input[type="submit"]:hover {
 }
 .filterable .filters input[disabled]:-ms-input-placeholder {
   color: #333;
-}
+} */
 
 

@@ -1,9 +1,13 @@
-export interface IbookDetail {
-    ISBN: number;
-    name: string;
+export interface IBookdetail {
+    bookName: string;
+    ISBN: string;
     author: string;
     publisher: string;
-    language: string;
+    // publisher: string;
+    copies: number;
+    examType: string;
     subject: string;
+    mediumType: string;
+    itemType: string;
     price: number;
 }

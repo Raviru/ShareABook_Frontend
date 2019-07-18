@@ -6,36 +6,77 @@
   <input type="submit" value="Add new item" (click)="onSubmit()">
   <div class="container">
     <div class="row"></div>
-      <div class="panel panel-primary filterable">
-        <div class="panel-heading">
+    <!-- <div class="panel panel-primary filterable"> -->
+      <!-- <div class="panel-heading">
           <div class="pull-right">
             <button class="btn btn-outline-secondary btn-filter"><i class="fas fa-sort"></i>Filter</button>
           </div>
-        </div>
-        <table class="table">
+        </div> -->
+      <!-- <table class="table">
           <thead>
             <tr class="filters">
               <th><input type="text" class="form-control" placeholder="ISBN" disabled></th>
               <th><input type="text" class="form-control" placeholder="Book Name" disabled></th>
               <th><input type="text" class="form-control" placeholder="Author" disabled></th>
               <th><input type="text" class="form-control" placeholder="Publisher" disabled></th>
-              <th><input type="text" class="form-control" placeholder="Language" disabled></th>
+              <th><input type="text" class="form-control" placeholder="No: of Copies" disabled></th>
+              <th><input type="text" class="form-control" placeholder="Exam Type" disabled></th>
               <th><input type="text" class="form-control" placeholder="Subject" disabled></th>
+              <th><input type="text" class="form-control" placeholder="Medium" disabled></th>
+              <th><input type="text" class="form-control" placeholder="Item Type" disabled></th>
               <th><input type="text" class="form-control" placeholder="Price" disabled></th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor='let bookDetail of bookDetails'>
               <td>{{bookDetail.ISBN}}</td>
-              <td>{{bookDetail.name}}</td>
+              <td>{{bookDetail.bookName}}</td>
               <td>{{bookDetail.author}}</td>
               <td>{{bookDetail.publisher}}</td>
-              <td>{{bookDetail.language}}</td>
+              <td>{{bookDetail.copies}}</td>
+              <td>{{bookDetail.examType}}</td>
               <td>{{bookDetail.subject}}</td>
+              <td>{{bookDetail.mediumType}}</td>
+              <td>{{bookDetail.itemType}}</td>
               <td>{{bookDetail.price}}</td>
             </tr>
           </tbody>
-        </table>
+        </table> -->
+      <div class="row">
+        <div class="col-2">
+          <div class="list-group">
+            <a *ngFor="let item of itemTypes"
+                class="list-group-item list-group-item-action">
+              {{item}}
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row">
+            <ng-container *ngFor="let book of bookDetails$; let i = index">
+              <div class="col">
+                <div class="card" style="width: 15rem;">
+                  <img src="../../../../assets/c2.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">{{book.bookName}}</h5>
+                    <p class="card-text">ISBN : {{book.ISBN}}</p>
+                    <p class="card-text">Author: {{book.author}}</p>
+                    <p class="card-text">Publisher: {{book.publisher}}</p>
+                    <p class="card-text">Exam: {{book.examType}}</p>
+                    <p class="card-text">Subject: {{book.subject}}</p>
+                    <p class="card-text">Medium: {{book.mediumType}}</p>
+                    <p class="card-text">Item Type: {{book.itemType}}</p>
+                    <p class="card-text">Price: {{book.price}}</p>
+                    <input type="button" style="background-color: #2dde98" value="Edit" (click)="onSubmit()">
+                    <input type="button" style="background-color: #ff4f92" value="Remove" (click)="delete()">
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="(i + 1) % 4 === 0" class="w-100"></div>
+            </ng-container>
+          </div>
+        </div>
       </div>
     </div>
+  <!-- </div> -->
 </body>
