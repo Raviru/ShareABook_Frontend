@@ -5,7 +5,7 @@ import { BProfileComponent } from './b-profile/b-profile.component';
 import { BDashboardComponent } from './b-dashboard/b-dashboard.component';
 import { BRegisterComponent } from './b-register/b-register.component';
 
-export const routes: Routes = [
+const routes: Routes = [
   { path: 'b-profile', component: BProfileComponent },
   { path: 'b-dashboard', component: BDashboardComponent },
   { path: 'b-register', component: BRegisterComponent },

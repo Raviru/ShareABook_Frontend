@@ -1,15 +1,11 @@
 <header>
 	<app-u-navbar></app-u-navbar>
-	<div class="pagination justify-content-center">
-		<button>USERS</button>
-		<button>BOOKSTORES</button>
-	</div>
 </header>
 <body>
 	<p>
 		<input
 			#query
-			(keyup)="filter(query.value)"
+			(keyup)="search($event)"
 			type="text" class="form-control" placeholder="Search..">
 	</p>
 	<table class="table">
@@ -26,7 +22,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr *ngFor="let book of bookDetails$">
+			<tr *ngFor="let book of bookDetails$ | bookfilter:searchText">
 				<td> {{book.bookName}} </td>
 				<td> {{book.examType}} </td>
 				<td> {{book.subject}} </td>

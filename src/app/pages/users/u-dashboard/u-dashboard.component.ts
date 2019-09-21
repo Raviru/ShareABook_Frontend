@@ -7,18 +7,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./u-dashboard.component.css']
 })
 export class UDashboardComponent implements OnInit {
-  bookDetails$;
+  bookDetails$: any = [];
+  searchText = null ;
 
-  constructor(private bookdetailService: BookDetailsService) {
-    this.bookDetails$ = this.bookdetailService.getBookDetails();
-   }
-
-   filter(query: string) {
-      console.log(query);
-   }
+  constructor(
+              private bookdetailService: BookDetailsService) { }
 
   ngOnInit() {
-    // this.bookDetails = this.serachService.filter;
+    this.loadAllBookDetails();
+  }
+
+  loadAllBookDetails() {
+    this.bookdetailService.getBookDetails().subscribe( res => {
+      this.bookDetails$ = res;
+      console.log(this.bookDetails$);
+    },
+    error => {
+      console.log(error);
+      if (error.status === 0) {
+        alert('Connection Error');
+      }
+    }
+    );
+  }
+
+  search(ev: any) {
+    console.log(ev.target.value);
+    this.searchText = ev.target.value;
+
+    // console.log(this.bookDetails$);
   }
 
 }

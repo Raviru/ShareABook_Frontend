@@ -2,6 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { BookfilterPipe } from './u-dashboard/bookfilter.pipe';
 
 import { UsersRoutingModule } from './users-routing.module';
 import { UProfileComponent } from './u-profile/u-profile.component';
@@ -31,7 +32,8 @@ import { BookDetailsService } from './../../services/book-details.service';
     UCandsComponent,
     UBookaddComponent,
     UMenubarComponent,
-    SearchComponent
+    SearchComponent,
+    BookfilterPipe,
   ],
   imports: [
     CommonModule,
