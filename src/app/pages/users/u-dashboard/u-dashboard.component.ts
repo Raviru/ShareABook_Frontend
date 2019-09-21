@@ -32,9 +32,8 @@ export class UDashboardComponent implements OnInit {
   }
 
   search(ev: any) {
-    console.log(ev.target.value);
+    // console.log(ev.target.value);
     this.searchText = ev.target.value;
-
     // console.log(this.bookDetails$);
   }
 

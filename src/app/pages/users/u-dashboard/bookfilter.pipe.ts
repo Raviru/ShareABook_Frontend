@@ -10,9 +10,12 @@ export class BookfilterPipe implements PipeTransform {
     if (!searchText) { return items; }
     searchText = searchText.toLowerCase();
     return items.filter(it => {
-      return ((it.firstName.toLowerCase().includes(searchText))
-      || (it.lastName.toLowerCase().includes(searchText))
-      || (it.email.toLowerCase().includes(searchText)));
+      return ((it.bookName.toLowerCase().includes(searchText))
+      || (it.examType.toLowerCase().includes(searchText))
+      || (it.subject.toLowerCase().includes(searchText))
+      || (it.mediumType.toLowerCase().includes(searchText))
+      || (it.itemType.toLowerCase().includes(searchText))
+      || (it.price.toString().includes(searchText)));
     });
   }
 }

@@ -1,3 +1,4 @@
+import { BookDetailsService } from './../../../services/book-details.service';
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from './../../../services/authentication.service';
 import {
@@ -7,6 +8,8 @@ import {
   Validators
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { first } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-u-bookadd',
@@ -21,7 +24,8 @@ export class UBookaddComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private route: Router,
-              private authService: AuthenticationService) {}
+              private authService: AuthenticationService,
+              private bookDetailsService: BookDetailsService) {}
 
   get bookName() {
     return this.bookAddForm.get('bookName');
@@ -67,25 +71,34 @@ export class UBookaddComponent implements OnInit {
     price: ['', [Validators.required, Validators.min(0)]]
   });
 
-  onSubmit() {
-    this.submitted = true;
-
-    // stop here if form is invalid
-    if (this.bookAddForm.invalid) {
-        return false;
-    }
-
-    this.route.navigate(['/users/u-catalogue']);
-
-    console.log(this.bookAddForm.value);
-    this.authService.item(this.bookAddForm.value)
-    .subscribe(
-      response => console.log('Success', response),
-      error => console.log('Error', error)
-    );
-// if
-}
-
   ngOnInit() {}
+
+  onSubmit() {
+    console.log('Submitted');
+    this.submitted = true;
+    if (this.bookAddForm.invalid) {
+      console.log('Invalid');
+      return;
+    }
+    this.bookDetailsService.addBook(this.bookAddForm.value)
+      .pipe(first())
+      .subscribe(
+        data => {
+          console.log(this.bookAddForm.value);
+          // this.toastCtrl.success('Category is added Successfully');
+          this.bookAddForm.reset();
+        },
+        error => {
+          console.log(error);
+          if (error.status === 400) {
+            // this.toastCtrl.error('Cannot add category.\n' + error.error.message);
+            console.log('Cannot add book.\n\' + error.error.message');
+          } else {
+            // this.toastCtrl.error('Server Error');
+            console.log('Server Error');
+          }
+        }
+      );
+  }
 }
 
