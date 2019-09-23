@@ -20,7 +20,7 @@ export class AuthenticationService {
   }
 
   item(book) {
-    return this.http.post<any>('http://localhost:8080/shareabook/api/v1/admin/book/add', book);
+    return this.http.post<any>('http://localhost:8080/shareabook/api/v1/book/add', book);
   }
 
   login(user) {

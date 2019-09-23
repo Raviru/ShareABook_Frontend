@@ -12,7 +12,7 @@ export class BookDetailsService {
     return this.http.get('http://localhost:8080/shareabook/api/v1/book/all');
   }
 
-  addBook(book) {
-    return this.http.post<any>('http://localhost:8080/shareabook/api/v1/book/add', book);
+  addBook(book, user) {
+    return this.http.post<any>('http://localhost:8080/shareabook/api/v1/book/add', book, user);
   }
 }

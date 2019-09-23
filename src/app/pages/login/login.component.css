@@ -193,7 +193,7 @@ p{
     margin: 0 0 2em 0;
     font-weight: 600;
 }
-.register input[type="email"],.register input[type="password"]{
+.register input[type="userName"],.register input[type="password"]{
     font-size: 1em;
     color: #fff;
     padding: 0.5em 1em;
@@ -575,7 +575,7 @@ input[type="text"] {
 	.logo span.fa {
 		font-size: 3.5em;
 	}
-	.register input[type="email"], .register input[type="password"] {
+	.register input[type="userName"], .register input[type="password"] {
 		width: 87%;
 	}
 	.logo {
@@ -594,7 +594,7 @@ input[type="text"] {
 		font-size: 14px;
 		padding: 8px 20px;
 	}
-	.register input[type="email"], .register input[type="password"] {
+	.register input[type="userName"], .register input[type="password"] {
 		width: 85%;
 	}
 }
@@ -614,7 +614,7 @@ input[type="text"] {
 	.styled-input label, select {
 		font-size: .875em;
 	}
-	.register input[type="email"], .register input[type="password"] {
+	.register input[type="userName"], .register input[type="password"] {
 		width: 83%;
 	}
 	.register-left h1 {

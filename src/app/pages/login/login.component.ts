@@ -13,6 +13,7 @@ import { first } from 'rxjs/operators';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
+  user: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -40,32 +41,48 @@ export class LoginComponent implements OnInit {
     .pipe(first())
     .subscribe(
       data => {
-        console.log(data);
         if (data == null) {
           console.log('Invalid');
           //   this.toastCtrl.error('Invalid Login', 'Login Failed');
           return;
         } else {
           if (data.type === 'student') {
-          this.router.navigate(['/users/u-dashboard']);
+          localStorage.getItem(data);
+          localStorage.setItem('userData', JSON.stringify(data));
+          console.log(data);
+          this.router.navigate(['/users/u-dashboard'], data);
+
+          // this.toastCtrl.success('Hello, Welcome Again!');
+
           } else if (data.type === 'admin') {
-          this.router.navigate(['/admin/a-dashboard']);
+          localStorage.getItem(data);
+          console.log(data);
+          this.router.navigate(['/admin/a-dashboard'], data);
+          // this.toastCtrl.success('Hello, Welcome Again!');
+
           } else if (data.type === 'bookshop_owner') {
-          this.router.navigate(['/bookstores/b-dashboard']);
+          localStorage.getItem(data);
+          console.log(data);
+          this.router.navigate(['/bookstores/b-dashboard'], data);
+          // this.toastCtrl.success('Hello, Welcome Again!');
+
+          } else if (data.type === 'tuition_provider') {
+          localStorage.getItem(data);
+          console.log(data);
+          this.router.navigate(['/tuition/b-dashboard'], data);
+          // this.toastCtrl.success('Hello, Welcome Again!');
           }
         }
       },
       error => {
         console.log(error);
-        // if (error.status === 400) {
-        //   console.log('Invalid Login');
-        //   this.toastCtrl.error('Invalid Login', 'Login Failed');
-        // } else if (error.status === 401) {
-        //   this.toastCtrl.error('Please Check Your Email For Email Verification', 'Invalid Login');
-        // } else {
-        //   console.log('Server Error');
-        //   this.toastCtrl.error('Server Error', 'Login Failed');
-        // }
+        if (error.status === 400) {
+          console.log('Invalid Login');
+          // this.toastCtrl.error('Invalid Login', 'Login Failed');
+        } else {
+          console.log('Server Error');
+          // this.toastCtrl.error('Server Error', 'Login Failed');
+        }
       }
     );
   }
