@@ -23,20 +23,20 @@
         <div class="register-in">
           <h2><span><img src="../../../../assets/pencil.png"></span> login here</h2>
           <div class="register-form">
-            <form [formGroup]="" action="#" method="post">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
               <div class="fields-grid">
                 <div class="styled-input">
-                  <input type="email" name="Email" required>
-                  <label>Email</label>
+                  <input type="userName" class="form-control" formControlName="userName" autofocus>
+                  <label>User Name</label>
                   <span></span>
                 </div>
                 <div class="styled-input">
-                  <input type="password" name="password" required>
+                  <input type="password" class="form-control" formControlName="password">
                   <label>Password</label>
                   <span></span>
                 </div>
               </div>
-              <input type="submit" value="Login" [routerLink]="['/admin/a-dashboard']">
+              <input type="submit" value="Login" [disabled]="!loginForm.valid">
             </form>
           </div>
         </div>
