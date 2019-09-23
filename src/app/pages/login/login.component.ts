@@ -47,27 +47,27 @@ export class LoginComponent implements OnInit {
           return;
         } else {
           if (data.type === 'student') {
-          localStorage.getItem(data);
-          localStorage.setItem('userData', JSON.stringify(data));
+          sessionStorage.getItem(data);
+          sessionStorage.setItem('userData', JSON.stringify(data));
           console.log(data);
           this.router.navigate(['/users/u-dashboard'], data);
 
           // this.toastCtrl.success('Hello, Welcome Again!');
 
           } else if (data.type === 'admin') {
-          localStorage.getItem(data);
+          sessionStorage.getItem(data);
           console.log(data);
           this.router.navigate(['/admin/a-dashboard'], data);
           // this.toastCtrl.success('Hello, Welcome Again!');
 
           } else if (data.type === 'bookshop_owner') {
-          localStorage.getItem(data);
+          sessionStorage.getItem(data);
           console.log(data);
           this.router.navigate(['/bookstores/b-dashboard'], data);
           // this.toastCtrl.success('Hello, Welcome Again!');
 
           } else if (data.type === 'tuition_provider') {
-          localStorage.getItem(data);
+          sessionStorage.getItem(data);
           console.log(data);
           this.router.navigate(['/tuition/b-dashboard'], data);
           // this.toastCtrl.success('Hello, Welcome Again!');

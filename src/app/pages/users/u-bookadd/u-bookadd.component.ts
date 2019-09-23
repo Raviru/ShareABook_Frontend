@@ -76,19 +76,25 @@ export class UBookaddComponent implements OnInit {
   onSubmit() {
     console.log('Submitted');
     this.submitted = true;
-    const u = JSON.parse(localStorage.getItem('userData'));
+    const u = JSON.parse(sessionStorage.getItem('userData'));
     // console.log(u);
     if (this.bookAddForm.invalid) {
       console.log('Invalid');
       return;
     }
-    this.bookDetailsService.addBook(this.bookAddForm.value, u)
+    const book = this.bookAddForm.value;
+    const user = u;
+    const add = { book,
+                  user};
+    this.bookDetailsService.addBook(add)
       .pipe(first())
       .subscribe(
         data => {
           console.log(this.bookAddForm.value, u);
           // this.toastCtrl.success('Category is added Successfully');
           this.bookAddForm.reset();
+          this.route.navigate(['/users/u-dashboard']);
+
         },
         error => {
           console.log(error);
