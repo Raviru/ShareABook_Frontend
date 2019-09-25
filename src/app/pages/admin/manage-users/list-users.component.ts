@@ -5,12 +5,12 @@ import { Router } from '@angular/router';
 import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
-  selector: 'app-list-books',
-  templateUrl: './list-books.component.html',
-  styleUrls: ['./list-books.component.css']
+  selector: 'app-list-users',
+  templateUrl: './list-users.component.html',
+  styleUrls: ['./list-users.component.css']
 })
-export class ListBooksComponent implements OnInit {
-  bookDetails: any = [];
+export class ListUsersComponent implements OnInit {
+  userDetails: any = [];
   modalService: any;
 
   constructor(
@@ -21,13 +21,13 @@ export class ListBooksComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.loadAllBookDetails();
+    this.loadAllUserDetails();
   }
 
-  loadAllBookDetails() {
-    this.adminService.getBookDetails().subscribe( res => {
-      this.bookDetails = res;
-      console.log(this.bookDetails);
+  loadAllUserDetails() {
+    this.adminService.getUsers().subscribe( res => {
+      this.userDetails = res;
+      console.log(this.userDetails);
     },
     error => {
       console.log(error);
@@ -38,9 +38,9 @@ export class ListBooksComponent implements OnInit {
     );
   }
 
-  openModal(book) {
+  openModal(user) {
 
-    this.ngxSmartModalService.setModalData(book, 'myModal');
+    this.ngxSmartModalService.setModalData(user, 'myModal');
     this.ngxSmartModalService.getModal('myModal').open();
     this.modalService = this.ngxSmartModalService.getModal('myModal').onAnyCloseEvent.subscribe(
       () => {

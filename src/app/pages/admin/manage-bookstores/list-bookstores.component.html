@@ -1,0 +1,39 @@
+<body>
+    <div class="container">
+        <div class="row"></div>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <ng-container *ngFor="let bookstore of bookstoreDetails; let i = index">
+                        <div class="col">
+                            <div class="card" style="width: 15rem;">
+                                <img src="../../../../assets/Bookshop/5.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{bookstore.bookstoreName}}</h5>
+                                    <p class="card-text">{{bookstore.address}}</p>
+                                    <input type="button" style="background-color: #2dde98" value="View"
+                                        (click)="openModal(bookstore)">
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="(i + 1) % 4 === 0" class="w-100"></div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ngx-smart-modal #myModal identifier="myModal">
+        <div *ngIf="myModal.hasData()">
+            <!-- <img class="img" [src]="myModal.getData().[index].url"> -->
+            <h5 class="tbl1"><span id="tag">Name:</span> {{myModal.getData().bookstoreName}}</h5>
+            <br />
+            <h5 class="tbl1"><span id="tag">Address:</span> {{myModal.getData().address}}</h5>
+            <h5 class="tbl1"><span id="tag">Registration Number:</span> {{myModal.getData().regNumber}}</h5>
+            <h5 class="tbl1"><span id="tag">Manager NIC:</span> {{myModal.getData().managerNIC}}</h5>
+            <h5 class="tbl1"><span id="tag">Type:</span> {{myModal.getData().bookShopType}}</h5>
+            <h5 class="tbl1"><span id="tag">Branch URL:</span> {{myModal.getData().connectedBranchURL}}</h5>
+            <button type="button" class="btn btn-danger bmodal">Block</button>
+            <button type="button" class="btn btn-secondary bmodal" (click)="closeModal()">Close</button>
+        </div>
+    </ngx-smart-modal>
+</body>

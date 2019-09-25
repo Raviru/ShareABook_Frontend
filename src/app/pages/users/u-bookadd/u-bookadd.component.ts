@@ -76,8 +76,8 @@ export class UBookaddComponent implements OnInit {
   onSubmit() {
     console.log('Submitted');
     this.submitted = true;
-    const u = JSON.parse(sessionStorage.getItem('userData'));
-    // console.log(u);
+    const u = JSON.parse(localStorage.getItem('userData'));
+    console.log(u);
     if (this.bookAddForm.invalid) {
       console.log('Invalid');
       return;

@@ -57,7 +57,6 @@ input[type="submit"]:hover {
 input[type="button"]{
   width: 47%;
   padding: 15px;
-  margin-left: 5px;
   font-weight: 700;
   color: rgb(53, 53, 53);
   font-size: 18px;
@@ -66,6 +65,7 @@ input[type="button"]{
   border-radius: 5px;
   letter-spacing: 0.1px;
   font-family: 'Harmattan';
+  margin-left: 30px
 }
 
 input[type="button"]:hover {
@@ -75,50 +75,3 @@ input[type="button"]:hover {
 input[type="button"]:active {
   border: 2PX solid rgb(228, 226, 226);
 }
-
-/* .filterable {
-  margin-top: 15px;
-}
-
-.filterable .panel-heading .pull-right {
-  margin-top: -20px;
-  float: right;
-}
-
-.filterable .panel-heading .pull-right button {
-  margin: 10px;
-  border: 3px solid gray;
-  padding: 10px 10px 50px 10px;
-  background-color: transparent;
-  text-transform: capitalize;
-  font-size: 17px;
-  color: #ff4f81;
-}
-
-.filterable .panel-heading .pull-right button:hover {
-  color: #2dde98;
-}
-
-.filterable .panel-heading .pull-right button > i {
-  padding-right:  10px;
-}
-
-.filterable .filters input[disabled] {
-  background-color: transparent;
-  border: none;
-  cursor: auto;
-  box-shadow: none;
-  padding: 0;
-  height: auto;
-}
-.filterable .filters input[disabled]::-webkit-input-placeholder {
-  color: #333;
-}
-.filterable .filters input[disabled]::-moz-placeholder {
-  color: #333;
-}
-.filterable .filters input[disabled]:-ms-input-placeholder {
-  color: #333;
-} */
-
-

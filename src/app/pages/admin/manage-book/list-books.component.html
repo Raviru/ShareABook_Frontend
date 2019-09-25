@@ -1,3 +1,42 @@
-<p>
-  list-books works!
-</p>
+<body>
+    <div class="container">
+        <div class="row"></div>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <ng-container *ngFor="let book of bookDetails; let i = index">
+                        <div class="col">
+                            <div class="card" style="width: 15rem;">
+                                <img src="../../../../assets/People/16.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{book.bookName}}</h5>
+                                    <p class="card-text">{{book.itemType}}</p>
+                                    <input type="button" style="background-color: #2dde98" value="View"
+                                        (click)="openModal(book)">
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="(i + 1) % 4 === 0" class="w-100"></div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ngx-smart-modal #myModal identifier="myModal">
+        <div *ngIf="myModal.hasData()">
+            <!-- <img class="img" [src]="myModal.getData().[index].url"> -->
+            <h5 class="tbl1"><span id="tag">Name:</span> {{myModal.getData().name}}</h5>
+            <br />
+            <h5 class="tbl1"><span id="tag">Item Type:</span> {{myModal.getData().itemType}}</h5>
+            <h5 class="tbl1"><span id="tag">ISBN:</span> {{myModal.getData().ISBN}}</h5>
+            <h5 class="tbl1"><span id="tag">Author:</span> {{myModal.getData().author}}</h5>
+            <h5 class="tbl1"><span id="tag">Publisher:</span> {{myModal.getData().publisher}}</h5>
+            <h5 class="tbl1"><span id="tag">Medium Type:</span> {{myModal.getData().mediumType}}</h5>
+            <h5 class="tbl1"><span id="tag">Exam Type:</span> {{myModal.getData().examType}}</h5>
+            <h5 class="tbl1"><span id="tag">Subject:</span> {{myModal.getData().subject}}</h5>
+            <h5 class="tbl1"><span id="tag">Price:</span> {{myModal.getData().price}}</h5>
+            <button type="button" class="btn btn-danger bmodal">Block</button>
+            <button type="button" class="btn btn-secondary bmodal" (click)="closeModal()">Close</button>
+        </div>
+    </ngx-smart-modal>
+</body>

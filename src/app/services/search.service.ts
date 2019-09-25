@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Item } from 'src/app/pages/users/classes/item';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -17,8 +16,4 @@ export class SearchService {
   /* filter(book) {
     return this.http.get<any>('http://localhost:8080/shareabook/api/v1/admin/book/search/all', book);
   } */
-
-  public findAll(): Observable<Item[]>{
-    return this.http.get<Item[]>('http://localhost:8080/shareabook/api/v1/book/search/all');
-  }
 }

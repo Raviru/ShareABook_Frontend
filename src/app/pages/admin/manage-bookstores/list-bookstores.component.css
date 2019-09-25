@@ -1,0 +1,60 @@
+.container {
+  width: 100%;
+  padding-top: 80px;
+}
+
+.card {
+  height: 98%;
+  width: 20%
+}
+
+.card .card-body h5 {
+  font-weight: 700;
+  font-size: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  font-family: "Harmattan";
+}
+
+.card .card-body p {
+  line-height: 15px;
+  text-align: left;
+}
+
+input[type="button"] {
+  width: 47%;
+  padding: 15px;
+  margin-left: 5px;
+  font-weight: 700;
+  color: rgb(53, 53, 53);
+  font-size: 18px;
+  text-transform: uppercase;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  letter-spacing: 0.1px;
+  font-family: "Harmattan";
+}
+
+input[type="button"]:hover {
+  border: 2px solid rgb(228, 226, 226);
+}
+
+input[type="button"]:active {
+  border: 2px solid rgb(228, 226, 226);
+}
+
+ngx-smart-modal{
+  text-align: center;
+}
+h5{
+  font-size: 14px;
+  margin-top: 6px;
+  text-align: left;
+}
+#tag{
+  font-weight: bold;
+}
+
+.bmodal {
+  margin: 10px;
+}
