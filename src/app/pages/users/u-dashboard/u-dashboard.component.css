@@ -25,9 +25,47 @@ header button:hover {
     border-color: transparent;
 }
 
-button {
-    width: 100%
+input[type="button"] {
+    width: 47%;
+    padding: 15px;
+    margin-left: 5px;
+    font-weight: 700;
+    color: rgb(53, 53, 53);
+    font-size: 18px;
+    text-transform: uppercase;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    letter-spacing: 0.1px;
+    font-family: "Harmattan";
+  }
+  
+  input[type="button"]:hover {
+    border: 2px solid rgb(228, 226, 226);
+  }
+  
+  input[type="button"]:active {
+    border: 2px solid rgb(228, 226, 226);
+  }
+
+a {
+    cursor: pointer;
 }
+
+ngx-smart-modal{
+    text-align: center;
+  }
+  h5{
+    font-size: 14px;
+    margin-top: 6px;
+    text-align: left;
+  }
+  #tag{
+    font-weight: bold;
+  }
+  
+  .bmodal {
+    margin: 10px;
+  }
 
 @media screen and (max-width: 670px){
     header{

@@ -30,9 +30,28 @@
 				<td> {{book.itemType}} </td>
 				<td> {{book.price}} </td>
 				<td> 
-					<a [routerLink]="['/bookItem', book.$key]">View</a>
+					<a (click)="openModal(book)">View</a>
 				</td>
 			</tr>
 		</tbody>
 	</table>
+	<ngx-smart-modal #myModal identifier="myModal">
+        <div *ngIf="myModal.hasData()">
+            <!-- <img class="img" [src]="myModal.getData().[index].url"> -->
+            <h5 class="tbl1"><span id="tag">Name:</span> {{myModal.getData().bookName}}</h5>
+            <br />
+            <h5 class="tbl1"><span id="tag">Item Type:</span> {{myModal.getData().itemType}}</h5>
+            <h5 class="tbl1"><span id="tag">ISBN:</span> {{myModal.getData().isbn}}</h5>
+            <h5 class="tbl1"><span id="tag">Author:</span> {{myModal.getData().author}}</h5>
+            <h5 class="tbl1"><span id="tag">Publisher:</span> {{myModal.getData().publisher}}</h5>
+            <h5 class="tbl1"><span id="tag">Medium Type:</span> {{myModal.getData().mediumType}}</h5>
+            <h5 class="tbl1"><span id="tag">Exam Type:</span> {{myModal.getData().examType}}</h5>
+            <h5 class="tbl1"><span id="tag">Subject:</span> {{myModal.getData().subject}}</h5>
+            <h5 class="tbl1"><span id="tag">No. of copies available:</span> {{myModal.getData().copies}}</h5>
+            <h5 class="tbl1"><span id="tag">Price:</span> {{myModal.getData().price}}</h5>
+            <h5 class="tbl1"><span id="tag">Original Price:</span> {{myModal.getData().originalPrice}}</h5>
+            <button type="button" class="btn btn-danger bmodal">Add to Cart</button>
+            <button type="button" class="btn btn-secondary bmodal" (click)="closeModal()">Close</button>
+        </div>
+    </ngx-smart-modal>
 </body>

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BookfilterPipe } from './u-dashboard/bookfilter.pipe';
+import { NgxSmartModalModule } from 'ngx-smart-modal';
 
 import { UsersRoutingModule } from './users-routing.module';
 import { UProfileComponent } from './u-profile/u-profile.component';
@@ -40,7 +41,8 @@ import { BookDetailsService } from './../../services/book-details.service';
     UsersRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxSmartModalModule.forRoot()
   ],
   providers: [
     BookDetailsService
