@@ -196,6 +196,11 @@ small {
 	color: #ff4f81
   }
 
+.checkbox {
+	margin-left: 50%;
+	font-size: 13px;
+}
+
 select{
     font-size: .9em;
     letter-spacing: 1px;

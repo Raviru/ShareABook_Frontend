@@ -12,6 +12,10 @@ export class BookDetailsService {
     return this.http.get('http://localhost:8080/shareabook/api/v1/book/all');
   }
 
+  getMyUploads(user) {
+    return this.http.post('http://localhost:8080/shareabook/api/v1/book/myuploads', user);
+  }
+
   addBook(add) {
     return this.http.post<any>('http://localhost:8080/shareabook/api/v1/book/add', add);
   }

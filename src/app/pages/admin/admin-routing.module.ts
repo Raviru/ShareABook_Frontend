@@ -7,7 +7,7 @@ import { RegisterBComponent } from './register-b/register-b.component';
 import { ListBookstoresComponent } from './manage-b/list-bookstores.component';
 import { ListBooksComponent } from './manage-book/list-books.component';
 
-export const routes: Routes = [
+const routes: Routes = [
   { path: 'a-profile', component: AProfileComponent },
   { path: 'a-dashboard', component: ADashboardComponent },
   { path: 'register-b', component: RegisterBComponent },

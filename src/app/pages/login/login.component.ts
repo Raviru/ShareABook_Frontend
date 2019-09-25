@@ -42,32 +42,32 @@ export class LoginComponent implements OnInit {
     .subscribe(
       data => {
         if (data == null) {
-          console.log('Invalid');
+          console.log('Invalid user credentials');
           //   this.toastCtrl.error('Invalid Login', 'Login Failed');
           return;
         } else {
           if (data.type === 'student') {
-          sessionStorage.getItem(data);
-          sessionStorage.setItem('userData', JSON.stringify(data));
+          localStorage.getItem(data);
+          localStorage.setItem('userData', JSON.stringify(data));
           console.log(data);
           this.router.navigate(['/users/u-dashboard'], data);
 
           // this.toastCtrl.success('Hello, Welcome Again!');
 
           } else if (data.type === 'admin') {
-          sessionStorage.getItem(data);
+          localStorage.getItem(data);
           console.log(data);
           this.router.navigate(['/admin/a-dashboard'], data);
           // this.toastCtrl.success('Hello, Welcome Again!');
 
           } else if (data.type === 'bookshop_owner') {
-          sessionStorage.getItem(data);
+          localStorage.getItem(data);
           console.log(data);
           this.router.navigate(['/bookstores/b-dashboard'], data);
           // this.toastCtrl.success('Hello, Welcome Again!');
 
           } else if (data.type === 'tuition_provider') {
-          sessionStorage.getItem(data);
+          localStorage.getItem(data);
           console.log(data);
           this.router.navigate(['/tuition/b-dashboard'], data);
           // this.toastCtrl.success('Hello, Welcome Again!');
