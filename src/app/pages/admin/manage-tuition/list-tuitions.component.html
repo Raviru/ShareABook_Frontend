@@ -1,0 +1,38 @@
+<body>
+    <div class="container">
+        <div class="row"></div>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <ng-container *ngFor="let tuition of tuitionDetails; let i = index">
+                        <div class="col">
+                            <div class="card" style="width: 15rem;">
+                                <img src="../../../../assets/People//8.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{tuition.id}}</h5>
+                                    <p class="card-text">{{tuition.name}}</p>
+                                    <input type="button" style="background-color: #2dde98" value="View"
+                                        (click)="openModal(tuition)">
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="(i + 1) % 4 === 0" class="w-100"></div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ngx-smart-modal #myModal identifier="myModal">
+        <div *ngIf="myModal.hasData()">
+            <!-- <img class="img" [src]="myModal.getData().[index].url"> -->
+            <h5 class="tbl1"><span id="tag">Name:</span> {{myModal.getData().name}}</h5>
+            <br />
+            <h5 class="tbl1"><span id="tag">Id:</span> {{myModal.getData().id}}</h5>
+            <h5 class="tbl1"><span id="tag">Email:</span> {{myModal.getData().email}}</h5>
+            <h5 class="tbl1"><span id="tag">City:</span> {{myModal.getData().city}}</h5>
+            <h5 class="tbl1"><span id="tag">Phone Number:</span> {{myModal.getData().phone}}</h5>
+            <button type="button" class="btn btn-danger bmodal">Block</button>
+            <button type="button" class="btn btn-secondary bmodal" (click)="closeModal()">Close</button>
+        </div>
+    </ngx-smart-modal>
+</body>

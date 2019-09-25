@@ -11,6 +11,8 @@ import { RegisterBComponent } from './register-b/register-b.component';
 import { ListBooksComponent } from './manage-book/list-books.component';
 import { ListBookstoresComponent } from './manage-bookstores/list-bookstores.component';
 import { ListUsersComponent } from './manage-users/list-users.component';
+import { ListTuitionsComponent } from './manage-tuition/list-tuitions.component';
+import { ListFeedbacksComponent } from './manage-feedbacks/list-feedbacks.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { ListUsersComponent } from './manage-users/list-users.component';
     ListBooksComponent,
     ListBookstoresComponent,
     ListUsersComponent,
+    ListTuitionsComponent,
+    ListFeedbacksComponent,
   ],
   imports: [
     CommonModule,

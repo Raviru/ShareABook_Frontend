@@ -7,6 +7,8 @@ import { RegisterBComponent } from './register-b/register-b.component';
 import { ListBooksComponent } from './manage-book/list-books.component';
 import { ListBookstoresComponent } from './manage-bookstores/list-bookstores.component';
 import { ListUsersComponent } from './manage-users/list-users.component';
+import { ListTuitionsComponent } from './manage-tuition/list-tuitions.component';
+import { ListFeedbacksComponent } from './manage-feedbacks/list-feedbacks.component';
 
 const routes: Routes = [
   { path: 'a-profile', component: AProfileComponent },
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: 'manage-book', component: ListBooksComponent },
   { path: 'manage-bookstores', component: ListBookstoresComponent },
   { path: 'manage-users', component: ListUsersComponent },
+  { path: 'manage-tuitions', component: ListTuitionsComponent },
+  { path: 'manage-feedbacks', component: ListFeedbacksComponent },
 
   {path: '**', redirectTo: 'a-dashboard', pathMatch: 'full'},
 ];
