@@ -10,7 +10,7 @@ import { ListUsersComponent } from './manage-users/list-users.component';
 import { ListTuitionsComponent } from './manage-tuition/list-tuitions.component';
 import { ListFeedbacksComponent } from './manage-feedbacks/list-feedbacks.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: 'a-profile', component: AProfileComponent },
   { path: 'a-dashboard', component: ADashboardComponent },
   { path: 'register-b', component: RegisterBComponent },

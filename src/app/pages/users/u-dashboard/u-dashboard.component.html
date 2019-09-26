@@ -32,6 +32,9 @@
 				<td> 
 					<a (click)="openModal(book)">View</a>
 				</td>
+				<td> 
+					<a (click)="addToCart(book)">Add to Cart</a>
+				</td>
 			</tr>
 		</tbody>
 	</table>
@@ -50,7 +53,7 @@
             <h5 class="tbl1"><span id="tag">No. of copies available:</span> {{myModal.getData().copies}}</h5>
             <h5 class="tbl1"><span id="tag">Price:</span> {{myModal.getData().price}}</h5>
             <h5 class="tbl1"><span id="tag">Original Price:</span> {{myModal.getData().originalPrice}}</h5>
-            <button type="button" class="btn btn-danger bmodal">Add to Cart</button>
+            <button type="button" class="btn btn-danger bmodal" (click)="addToCart(myModal.getData(bookDetails$))">Add to Cart</button>
             <button type="button" class="btn btn-secondary bmodal" (click)="closeModal()">Close</button>
         </div>
     </ngx-smart-modal>

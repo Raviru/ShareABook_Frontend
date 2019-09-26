@@ -19,4 +19,19 @@ export class BookDetailsService {
   addBook(add) {
     return this.http.post<any>('http://localhost:8080/shareabook/api/v1/book/add', add);
   }
+
+  addBookToCart(book) {
+    // console.log(book);
+    // localStorage.getItem(book);
+    localStorage.setItem('book', JSON.stringify(book));
+  }
+
+  getBookFromCart() {
+    return JSON.parse(localStorage.getItem('book'));
+  }
+
+  removeAllBooksFromCart() {
+    return localStorage.removeItem('book');
+  }
+
 }

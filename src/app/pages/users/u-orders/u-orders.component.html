@@ -1,4 +1,47 @@
-<app-u-navbar></app-u-navbar>
-<p>
-  u-orders works!
-</p>
+<header>
+  <app-u-navbar></app-u-navbar>
+</header>
+
+<div id="collapseExample">
+  <div class="card">
+    <div class="card-body">
+      <h1 style="color:chocolate">Items in your cart:<span style="margin-left: 5%;margin-right: 22%;color: greenyellow">
+          Total value is: {{allTotal}}</span>
+        <!-- <button class="btn btn-outline-success" (click)="acc.toggle('static-2')">CheckOut</button> -->
+      </h1>
+      <table class="table table-bordered table-responsive table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th>Image</th>
+            <th>Name & Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Add/Remove</th>
+            <th>Total For Item</th>
+          </tr>
+        </thead>
+        <tr *ngFor="let book of bookAddedToCart; let q = index">
+          <td><img src="../../../../assets/Book/10.jpg" width="80px;" height="80px;" /></td>
+          <td class="text-center">{{book.bookName}}<br />
+            {{book.isbn}}<br />
+            {{book.subject}}<br />
+            {{book.itemType}}<br />
+            {{book.publisher}}<br />
+            {{book.author}}<br />
+          </td>
+          <td>{{book.price}}</td>
+          <td>{{book.quantity}}</td>
+          <td>
+            <div class="form-inline">
+              <button type="button" (click)="onAddQuantity(book)" class="btn btn-success">+</button>
+              <input type="text" [ngModel]="book.quantity" (ngModelChange)="book.quantity=$event"
+                class="form-control form-inline" id="count">
+              <button type="button" (click)="onRemoveQuantity(book)" class="btn btn-danger">-</button>
+            </div>
+          </td>
+          <td>{{book.price * book.quantity}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
